@@ -1,0 +1,18 @@
+/* ================================================================
+   intro.css — Intro overlay container (Three.js renders inside it)
+   ================================================================ */
+
+#intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: #0e0c08; /* fallback while Three.js loads */
+  overflow: hidden;
+}
+
+/* Three.js canvas fills the overlay */
+#intro-overlay canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}

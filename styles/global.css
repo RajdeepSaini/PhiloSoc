@@ -1,0 +1,72 @@
+/* ================================================================
+   global.css — Philosoc Broadsheet Design System
+   ================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Pinyon+Script&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Broadsheet / Newsprint Palette */
+  --paper:          #f4ede2;
+  --paper-tint:     #ece3d4;
+  --paper-dark:     #dfd2be;
+  --ink:            #17120c;
+  --ink-mid:        #382f24;
+  --ink-faded:      #7c6e5e;
+  --ink-hairline:   rgba(23, 18, 12, 0.18);
+  --ink-rule:       rgba(23, 18, 12, 0.35);
+
+  /* Nocturne / Void Palette (for Existentialism & Nihilism) */
+  --void:           #0a0a0c;
+  --void-tint:      #131317;
+  --void-paper:     #1a191f;
+  --light-ink:      #f4ede2;
+  --light-faded:    rgba(244, 237, 226, 0.65);
+  --light-hairline: rgba(244, 237, 226, 0.15);
+
+  /* Editorial Accents */
+  --crimson:        #9e2a2b;
+  --warm-gold:      #c68b44;
+  --slate:          #4a5568;
+
+  /* Typography System — Authentic & Crafted */
+  --font-cursive:   'Pinyon Script', cursive;
+  --font-script:    'Alex Brush', cursive;
+  --font-display:   'Fraunces', Georgia, serif;
+  --font-body:      'Newsreader', Georgia, serif;
+  --font-mono:      'Space Mono', monospace;
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+/* Subtle newspaper print grain texture overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.28;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+}
+

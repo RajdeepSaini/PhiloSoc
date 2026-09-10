@@ -1,0 +1,516 @@
+/* ================================================================
+   landing.css — PHILOSOC Hero · AAA Editorial Design
+   ================================================================ */
+
+/* ── Scene container: true full-viewport centering ── */
+#scene-landing {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  background: #f5f3ef;
+  overflow: hidden;
+}
+
+/* ================================================================
+   TOP NAVIGATION BAR
+   ================================================================ */
+.hero-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.6rem 2.6rem;
+  opacity: 0;
+  animation: hero-fade-up 1s ease 0.05s forwards;
+}
+
+.nav-brand {
+  font-family: 'Bebas Neue', 'Impact', sans-serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.12em;
+  color: #111111;
+  opacity: 0.72;
+  user-select: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-link {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #111111;
+  text-decoration: none;
+  opacity: 0.65;
+  position: relative;
+  transition: opacity 0.2s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #111111;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav-link:hover {
+  opacity: 1;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-cta {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.56rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #111111;
+  text-decoration: none;
+  border: 1px solid rgba(17, 17, 17, 0.42);
+  padding: 0.45rem 1rem;
+  opacity: 0.85;
+  transition: opacity 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-cta:hover {
+  background: #111111;
+  color: #f5f3ef;
+  opacity: 1;
+  border-color: #111111;
+}
+
+
+
+/* ================================================================
+   GRADIENT BACKGROUND
+   Much stronger corner-to-center: dark grey at corners fading to
+   bright near-white at the centre where the type sits.
+   ================================================================ */
+.hero-gradient-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    /* Darker corner vignettes */
+    radial-gradient(ellipse 60% 60% at   0%   0%, rgba(100,100,98,0.60) 0%, transparent 65%),
+    radial-gradient(ellipse 60% 60% at 100%   0%, rgba(100,100,98,0.60) 0%, transparent 65%),
+    radial-gradient(ellipse 60% 60% at   0% 100%, rgba(100,100,98,0.60) 0%, transparent 65%),
+    radial-gradient(ellipse 60% 60% at 100% 100%, rgba(100,100,98,0.60) 0%, transparent 65%),
+    /* Bright paper-white core at the centre */
+    radial-gradient(ellipse 48% 52% at 50% 48%,  #ffffff 0%, transparent 80%);
+  pointer-events: none;
+}
+
+/* ── Noise grain ── */
+.hero-grain {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+/* ================================================================
+   AAA CORNER DECORATIONS
+   Magazine-style floating labels at each corner
+   ================================================================ */
+.hero-corner {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  opacity: 0;
+  animation: corner-appear 1.2s ease 1.0s forwards;
+}
+
+.hero-corner-tl { top: 2.2rem;    left: 2.6rem;  }
+.hero-corner-tr { top: 2.2rem;    right: 2.6rem; }
+.hero-corner-bl { bottom: 2.5rem; left: 2.6rem;  flex-direction: column; align-items: flex-start; gap: 0.25rem; }
+.hero-corner-br { bottom: 2.5rem; right: 2.6rem; }
+
+.corner-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.56rem;
+  letter-spacing: 0.3em;
+  color: #111111;
+  opacity: 0.62;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.corner-rule {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: #111111;
+  opacity: 0.38;
+  flex-shrink: 0;
+}
+
+.corner-quote {
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 0.68rem;
+  line-height: 1.55;
+  color: #111111;
+  opacity: 0.64;
+}
+
+.corner-attr {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.5rem;
+  letter-spacing: 0.2em;
+  color: #111111;
+  opacity: 0.50;
+}
+
+@keyframes corner-appear {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ================================================================
+   HERO INNER — true bilateral centering
+   ================================================================ */
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  padding: 0 1rem;
+  user-select: none;
+}
+
+/* ================================================================
+   LOGOTYPE — Bebas Neue, viewport-filling scale
+   ================================================================ */
+.hero-logotype {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  line-height: 0.9;
+  /* Slight negative gap so logo nestles between letters */
+  gap: clamp(-0.3rem, -0.8vw, -0.15rem);
+  opacity: 0;
+  transform: translateY(24px) scale(0.97);
+  animation: hero-rise 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+}
+
+/* ── Base letter style — Bebas Neue ── */
+.logo-word {
+  font-family: 'Bebas Neue', 'Impact', sans-serif;
+  font-size: clamp(5rem, 16.5vw, 18rem);
+  font-weight: 400; /* Bebas Neue has only one weight */
+  letter-spacing: 0.02em;
+  line-height: 0.88;
+  display: inline-block;
+}
+
+/* ── PHIL: outlined / hollow letters — black stroke, transparent fill ── */
+.logo-phil {
+  color: transparent;
+  -webkit-text-stroke: clamp(2px, 0.22vw, 4px) #111111;
+  /* Slight optical pull toward the logo */
+  padding-right: clamp(0.02em, 0.2vw, 0.06em);
+}
+
+/* ── SOC: solid filled black ── */
+.logo-soc {
+  color: #111111;
+  -webkit-text-stroke: 0;
+  padding-left: clamp(0.02em, 0.2vw, 0.06em);
+}
+
+/* ── Club logo image wrapper ── */
+.logo-img-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* Size matched to ~0.86× the cap-height so it sits flush within the text */
+  width:  clamp(4rem, 13.5vw, 14.5rem);
+  height: clamp(4rem, 13.5vw, 14.5rem);
+  flex-shrink: 0;
+  /* Vertical nudge so the circular logo aligns optically with the cap height */
+  margin-top: -0.02em;
+  /* Clip to circle so only the round logo shape is visible */
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  /* darken: only renders pixels darker than the background,
+     white pixels (255,255,255) disappear perfectly */
+  mix-blend-mode: darken;
+}
+
+
+
+
+/* ================================================================
+   RULE SEPARATOR
+   ================================================================ */
+.hero-rule-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: clamp(1.2rem, 2.5vw, 2rem);
+  opacity: 0;
+  animation: hero-fade-up 1s ease 0.6s forwards;
+}
+
+.hero-rule {
+  display: block;
+  width: clamp(60px, 12vw, 120px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(17,17,17,0.45), transparent);
+}
+
+/* ================================================================
+   SUBTITLES
+   ================================================================ */
+
+/* "THE PHILOSOPHY CLUB · IIITD" — primary subtitle, clearly legible */
+.hero-subtitle-top {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(0.58rem, 1.1vw, 0.9rem);
+  font-weight: 400;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: #111111;
+  margin-top: clamp(0.6rem, 1.2vw, 1rem);
+  opacity: 0;
+  animation: hero-subtitle-reveal 1s ease 0.75s forwards;
+}
+
+/* "THINK DEEPER, QUESTION EVERYTHING" — secondary, softer but readable */
+.hero-tagline {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(0.5rem, 0.9vw, 0.72rem);
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #111111;
+  margin-top: clamp(0.4rem, 0.8vw, 0.7rem);
+  opacity: 0;
+  animation: hero-tagline-reveal 1s ease 0.95s forwards;
+}
+
+/* ── Animation keyframes ── */
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(24px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
+
+@keyframes hero-fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes hero-subtitle-reveal {
+  from { opacity: 0;    transform: translateY(10px); }
+  to   { opacity: 0.82; transform: translateY(0); }
+}
+
+@keyframes hero-tagline-reveal {
+  from { opacity: 0;    transform: translateY(10px); }
+  to   { opacity: 0.58; transform: translateY(0); }
+}
+
+/* ================================================================
+   SCROLL CUE — Elegant, centered viewport-bottom indicator
+   ================================================================ */
+.hero-scroll-cue {
+  position: absolute;
+  bottom: 2.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  opacity: 0;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  animation: hero-fade-up 1s ease 1.3s forwards;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.hero-scroll-cue:hover {
+  transform: translateX(-50%) translateY(-2px);
+}
+
+.hero-scroll-cue:hover .scroll-cue-mouse {
+  border-color: rgba(17, 17, 17, 0.75);
+}
+
+.hero-scroll-cue:hover .scroll-cue-label {
+  opacity: 0.85;
+}
+
+.hero-scroll-cue:hover .scroll-cue-arrow {
+  opacity: 0.85;
+}
+
+/* Mouse capsule */
+.scroll-cue-mouse {
+  width: 18px;
+  height: 28px;
+  border: 1.4px solid rgba(17, 17, 17, 0.55);
+  border-radius: 9px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 4px;
+  transition: border-color 0.25s ease;
+}
+
+/* Mouse wheel dot */
+.scroll-cue-wheel {
+  display: block;
+  width: 2.5px;
+  height: 5px;
+  background: #111111;
+  border-radius: 1.5px;
+  animation: scroll-wheel-glide 2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@keyframes scroll-wheel-glide {
+  0% {
+    transform: translateY(0);
+    opacity: 0.85;
+  }
+  45% {
+    opacity: 0.85;
+  }
+  75% {
+    transform: translateY(9px);
+    opacity: 0;
+  }
+  76% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.85;
+  }
+}
+
+/* Downward chevron */
+.scroll-cue-arrow-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 7px;
+}
+
+.scroll-cue-arrow {
+  color: #111111;
+  opacity: 0.52;
+  animation: scroll-arrow-bob 2s ease-in-out infinite;
+  transition: opacity 0.25s ease;
+}
+
+@keyframes scroll-arrow-bob {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.52;
+  }
+  50% {
+    transform: translateY(3px);
+    opacity: 0.88;
+  }
+}
+
+/* SCROLL label */
+.scroll-cue-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.52rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #111111;
+  opacity: 0.58;
+  transition: opacity 0.25s ease;
+}
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+@media (max-width: 900px) {
+  .logo-word       { font-size: clamp(3.5rem, 15vw, 8rem); }
+  .logo-img-wrap   { width: clamp(3rem, 12.5vw, 7rem); height: clamp(3rem, 12.5vw, 7rem); }
+  .hero-corner-bl,
+  .hero-corner-br  { display: none; }
+}
+
+@media (max-width: 600px) {
+  .logo-word       { font-size: clamp(2.8rem, 18vw, 5rem); }
+  .logo-img-wrap   { width: clamp(2.4rem, 16vw, 4.4rem); height: clamp(2.4rem, 16vw, 4.4rem); }
+  .hero-corner     { display: none; }
+  .hero-subtitle-top { letter-spacing: 0.22em; font-size: 0.58rem; }
+  .hero-tagline      { letter-spacing: 0.16em; font-size: 0.54rem; }
+  .logo-phil { -webkit-text-stroke-width: 2px; }
+  .hero-scroll-cue   { bottom: 1.4rem; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

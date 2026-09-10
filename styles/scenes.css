@@ -1,0 +1,1317 @@
+/* ================================================================
+   scenes.css — PHILOSOC Scene Transitions & Layout
+   Scene 1: "What is Philosophy?" (Left Black, Right White)
+   Scene 2: "What is PhiloSoc?" (Boxes Switch: Left White, Right Black)
+   ================================================================ */
+
+/* ── Container & Base Scene Setup ── */
+#main-experience {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.scene {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#scene-landing {
+  z-index: 10;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+#scene-landing.behind-curtain {
+  pointer-events: none;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* ================================================================
+   THE SPLIT STAGE (CURTAINS & CONTENT CONTAINERS)
+   ================================================================ */
+#scene-split-stage {
+  z-index: 20;
+  pointer-events: none;
+  background: transparent;
+}
+
+#scene-split-stage.active {
+  pointer-events: auto;
+}
+
+/* ── The Two Sliding Curtain Panels ── */
+.curtain {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50vw;
+  height: 100%;
+  will-change: transform;
+}
+
+/* Black Curtain Panel */
+.curtain-left {
+  left: 0;
+  background: #080808;
+  z-index: 23; /* Elevated so it sweeps over cleanly with depth */
+  transform: translate3d(-100%, 0, 0);
+  box-shadow: 25px 0 60px rgba(0, 0, 0, 0.55), -25px 0 60px rgba(0, 0, 0, 0.55);
+}
+
+.curtain-left::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+/* White Curtain Panel */
+.curtain-right {
+  left: 50vw;
+  background: #ffffff;
+  z-index: 21;
+  transform: translate3d(100%, 0, 0);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.12);
+}
+
+.curtain-right::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* ── Split Content Stages ── */
+.philo-split {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: 25;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.philo-split.revealed {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Individual Split Columns — ZERO SCROLLBAR */
+.split-col {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* IE & Edge */
+}
+
+/* WebKit Scrollbar Suppression */
+.split-col::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   SCENE 1: WHAT IS PHILOSOPHY?
+   Left: Solid Black (Sketch Style) | Right: Solid White (Details)
+   ════════════════════════════════════════════════════════════════ */
+.split-left {
+  background: transparent;
+  color: #ffffff;
+  padding: 3rem 3.5rem 3rem 4.5rem;
+  justify-content: flex-start;
+}
+
+.split-left-inner {
+  max-width: 520px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.split-right {
+  background: transparent;
+  color: #111111;
+  padding: 3rem 4.5rem 3rem 3.5rem;
+  justify-content: flex-start;
+}
+
+.split-right-inner {
+  max-width: 560px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   SCENE 2: WHAT IS PHILOSOC?
+   Left: Solid White (Details) | Right: Solid Black (Sketch Style)
+   ════════════════════════════════════════════════════════════════ */
+.split-left-white {
+  background: transparent;
+  color: #111111;
+  padding: 3rem 3.5rem 3rem 4.5rem;
+  justify-content: flex-start;
+}
+
+.split-right-black {
+  background: transparent;
+  color: #ffffff;
+  padding: 3rem 4.5rem 3rem 3.5rem;
+  justify-content: flex-start;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   SHARED TYPOGRAPHY & ELEMENTS
+   ════════════════════════════════════════════════════════════════ */
+
+/* Badge Indicator */
+.split-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.badge-text {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Giant Bold Title — Direct from User Sketch */
+.philo-sketch-title {
+  font-family: 'Space Grotesk', 'Impact', sans-serif;
+  font-size: clamp(2.8rem, 5.2vw, 4.8rem);
+  font-weight: 800;
+  line-height: 0.94;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.philo-sketch-title .title-line:first-child {
+  opacity: 0.96;
+}
+
+.philo-sketch-title .title-line:last-child {
+  letter-spacing: -0.035em;
+  text-shadow: 0 2px 20px rgba(255, 255, 255, 0.15);
+}
+
+/* Quote Block */
+.split-left-quote {
+  border-left: 2px solid rgba(255, 255, 255, 0.35);
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.split-left-quote .quote-text {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.42;
+}
+
+.split-left-quote .quote-author {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.56rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* Footer Stamp */
+.split-left-footer {
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.left-coords {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.54rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.38);
+}
+
+/* Right Section Header (White Background Side) */
+.philo-right-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.philo-section-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #777777;
+  display: inline-block;
+}
+
+.philo-lead-heading {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(1.25rem, 1.8vw, 1.55rem);
+  font-weight: 600;
+  line-height: 1.24;
+  color: #111111;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+.philo-lead-text {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 0.88rem;
+  line-height: 1.54;
+  color: #383838;
+  margin: 0;
+}
+
+/* Three Inquiry / Society Cards — Compact, Elegant */
+.philo-inquiry-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.inquiry-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: #fbfbfb;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: 2px;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.2s ease,
+              background-color 0.2s ease,
+              box-shadow 0.2s ease;
+  cursor: default;
+}
+
+.inquiry-card:hover {
+  background: #ffffff;
+  border-color: rgba(17, 17, 17, 0.28);
+  transform: translateX(3px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.inquiry-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #111111;
+  opacity: 0.45;
+  padding-top: 0.1rem;
+  flex-shrink: 0;
+}
+
+.inquiry-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.inquiry-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #111111;
+  margin: 0;
+}
+
+.inquiry-desc {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 0.8rem;
+  line-height: 1.42;
+  color: #555555;
+  margin: 0;
+}
+
+/* Action Buttons Row */
+.philo-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 0.3rem;
+}
+
+.philo-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: #111111;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.68rem 1.25rem;
+  border-radius: 2px;
+  border: 1px solid #111111;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.philo-btn-primary:hover {
+  background: #2a2a2a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+.philo-btn-primary svg {
+  transition: transform 0.2s ease;
+}
+
+.philo-btn-primary:hover svg {
+  transform: translateX(3px);
+}
+
+.philo-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: #111111;
+  border: 1px solid rgba(17, 17, 17, 0.22);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 0.68rem 1.1rem;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.philo-btn-secondary:hover {
+  border-color: #111111;
+  background: rgba(17, 17, 17, 0.04);
+  transform: translateY(-1px);
+}
+
+.philo-btn-secondary svg {
+  transition: transform 0.2s ease;
+}
+
+.philo-btn-secondary:hover svg {
+  transform: translateY(-2px);
+}
+
+/* ================================================================
+   SIDE NAVIGATION PROGRESS DOTS (3 SCENES)
+   ================================================================ */
+.scene-progress {
+  position: fixed;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  pointer-events: auto;
+}
+
+.pdot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid #111111;
+  background: transparent;
+  opacity: 0.35;
+  cursor: pointer;
+  transition: opacity 0.25s ease, transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.pdot:hover {
+  opacity: 0.8;
+  transform: scale(1.25);
+}
+
+.pdot.active {
+  opacity: 1;
+  background: #111111;
+  transform: scale(1.35);
+  box-shadow: 0 0 8px rgba(17, 17, 17, 0.3);
+}
+
+/* In Scene 2, the right side is Black, so dots turn White */
+.scene-progress.light-dots .pdot {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.scene-progress.light-dots .pdot.active {
+  background: #ffffff;
+  border-color: #ffffff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* ================================================================
+   RESPONSIVE LAYOUT
+   ================================================================ */
+@media (max-width: 1024px) {
+  .split-left,
+  .split-left-white {
+    padding: 2.5rem 2rem 2.5rem 2.5rem;
+  }
+  .split-right,
+  .split-right-black {
+    padding: 2.5rem 2.5rem 2.5rem 2rem;
+  }
+  .philo-sketch-title {
+    font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .curtain {
+    width: 100vw;
+    height: 50vh;
+  }
+  .curtain-left {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 50vh;
+    transform: translate3d(0, -100%, 0);
+  }
+  .curtain-right {
+    top: 50vh;
+    left: 0;
+    width: 100vw;
+    height: 50vh;
+    transform: translate3d(0, 100%, 0);
+  }
+  .philo-split {
+    flex-direction: column;
+  }
+  .split-col {
+    width: 100%;
+    height: 50%;
+  }
+  .split-left,
+  .split-left-white,
+  .split-right,
+  .split-right-black {
+    padding: 1.8rem 1.5rem;
+  }
+  .philo-sketch-title {
+    font-size: 2.1rem;
+  }
+  .philo-inquiry-grid {
+    gap: 0.5rem;
+  }
+  .scene-progress {
+    right: 1rem;
+  }
+}
+
+/* ================================================================
+   SCENE 3: WHY JOIN US? (AUTO-SCROLLING MASONRY FLANKS + EDITORIAL STAGE)
+   Fixed 100vh viewport, non-scrollable, 100% unified theme & typography
+   ================================================================ */
+.philo-scene-stage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 26;
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  background: #f5f3ef;
+}
+
+.philo-scene-stage.revealed {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ── Flanking Columns: Infinitely Auto-Scrolling Literature Streams ── */
+.why-flank {
+  width: clamp(260px, 25vw, 350px);
+  height: 100%;
+  position: relative;
+  display: flex;
+  gap: 0.75rem;
+  padding: 0 0.8rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: rgba(17, 17, 17, 0.015);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.why-flank-left {
+  border-right: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+.why-flank-right {
+  border-left: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+/* Individual Vertical Column Track */
+.scroll-col {
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.scroll-track {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  will-change: transform;
+}
+
+/* Asynchronous Speeds for Organic Masonry Rhythm */
+.scroll-col-1 .scroll-track {
+  animation: infiniteScrollUp 34s linear infinite;
+}
+
+.scroll-col-2 .scroll-track {
+  animation: infiniteScrollUp 44s linear infinite;
+}
+
+.why-flank-right .scroll-col-1 .scroll-track {
+  animation: infiniteScrollUp 38s linear infinite;
+}
+
+.why-flank-right .scroll-col-2 .scroll-track {
+  animation: infiniteScrollUp 32s linear infinite;
+}
+
+/* Pause Scrolling on Hover — Stops immediately for reader convenience */
+.why-flank:hover .scroll-track,
+.scroll-col:hover .scroll-track,
+.flank-card:hover {
+  animation-play-state: paused !important;
+}
+
+@keyframes infiniteScrollUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+/* ── Literature Card: Same Background Color for All, Natural Variable Height ── */
+.flank-card {
+  background: #ffffff;
+  border: 1px solid rgba(17, 17, 17, 0.09);
+  border-radius: 2px;
+  padding: 0.85rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.2s ease,
+              border-color 0.2s ease;
+}
+
+.flank-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(17, 17, 17, 0.32);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+.card-mini-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+}
+
+.mini-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.54rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #888888;
+}
+
+.mini-author {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.54rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #333333;
+  font-weight: 700;
+}
+
+.mini-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #111111;
+  margin: 0.25rem 0 0.25rem;
+  line-height: 1.25;
+}
+
+.mini-excerpt {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 0.78rem;
+  font-style: italic;
+  line-height: 1.45;
+  color: #444444;
+  margin: 0;
+}
+
+/* ── Center Stage: Black Obsidian Centerpiece (Matching User Request) ── */
+.why-center-stage {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 2rem 2.5rem;
+  text-align: center;
+  background: #080808;
+  color: #ffffff;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.55);
+  position: relative;
+  z-index: 2;
+}
+
+.why-center-inner {
+  max-width: 520px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+/* Middle Section Typography Overrides */
+.why-title-display {
+  color: #ffffff !important;
+  font-size: clamp(2.8rem, 4.6vw, 4.4rem) !important;
+  text-align: center;
+  margin: 0.35rem 0 0.15rem !important;
+  text-shadow: 0 2px 25px rgba(255, 255, 255, 0.1);
+}
+
+.why-quote-lead {
+  text-align: center;
+  max-width: 480px;
+  margin: 0 0 0.55rem !important;
+  color: rgba(255, 255, 255, 0.82) !important;
+  font-style: italic;
+  font-size: 0.88rem !important;
+  line-height: 1.54 !important;
+}
+
+/* Middle Section Dark Inquiry Cards */
+.why-center-stage .inquiry-card {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 2px;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.why-center-stage .inquiry-card:hover {
+  background: rgba(255, 255, 255, 0.075);
+  border-color: rgba(255, 255, 255, 0.38);
+  transform: translateX(4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+.why-center-stage .inquiry-num {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.why-center-stage .inquiry-title {
+  color: #ffffff;
+}
+
+.why-center-stage .inquiry-desc {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* Club Rhythm Meta */
+.why-club-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.52rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 0.2rem;
+}
+
+.why-club-meta .meta-sep {
+  opacity: 0.35;
+}
+
+/* Light Button on Dark Middle Section */
+.philo-btn-light {
+  background: #ffffff !important;
+  color: #080808 !important;
+  border-color: #ffffff !important;
+  font-weight: 700;
+}
+
+.philo-btn-light:hover {
+  background: transparent !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+.philo-btn-secondary-dark {
+  border-color: rgba(255, 255, 255, 0.22) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.philo-btn-secondary-dark:hover {
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .why-flank {
+    width: 180px;
+    padding: 0 0.4rem;
+  }
+  .why-flank .scroll-col-2 {
+    display: none;
+  }
+  .why-center-stage {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-flank {
+    display: none;
+  }
+  .why-center-stage {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* ================================================================
+   SCENE 4: Footer / Navigation Menu
+   Left: Dynamic Image Panel | Right: Full-screen nav
+   ================================================================ */
+
+#scene-footer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  background: #080808;
+  z-index: 30; /* Must be above split-stage curtains (z-index 23) */
+  overflow: hidden;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+#scene-footer.revealed {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* ── Left Image Panel ── */
+.footer-left-panel {
+  position: relative;
+  width: 38%;
+  height: 100%;
+  background: #080808;
+  border-right: 1px solid rgba(255,255,255,0.07);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ── Image wrappers ── */
+.footer-img-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  z-index: 1;
+  visibility: hidden;
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.28s step-end;
+  pointer-events: none;
+}
+
+.footer-img-wrap.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), visibility 0s;
+}
+
+/* Default logo wrap */
+.footer-img-default {
+  background: #080808;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Precise circle container: clips the image exactly at its outer circle, eliminating all square corner artifacts */
+.footer-logo-circle-container {
+  width: min(72vw, 320px);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.8), 0 0 15px rgba(255, 255, 255, 0.02);
+}
+
+.footer-logo-full {
+  width: 104%;
+  height: 104%;
+  object-fit: cover;
+  border-radius: 50%;
+  /* Invert so white bg → black (matches panel), yin-yang symbol inverts cleanly */
+  filter: invert(1) opacity(0.92);
+  transition: transform 0.6s cubic-bezier(0.16,1,0.3,1), filter 0.4s ease;
+  display: block;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Placeholder panels for non-logo panels */
+.footer-img-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Each nav item gets a distinct tonal background */
+.fp-philosophy { background: linear-gradient(145deg, #0f0f14 0%, #1a1a2e 100%); }
+.fp-about      { background: linear-gradient(145deg, #0f0f0f 0%, #111 100%); }
+.fp-events     { background: linear-gradient(145deg, #0c0c10 0%, #151520 100%); }
+.fp-blog       { background: linear-gradient(145deg, #0d0d0d 0%, #191916 100%); }
+.fp-join       { background: linear-gradient(145deg, #080808 0%, #141414 100%); }
+
+.fp-roman {
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(5rem, 14vw, 10rem);
+  font-weight: 300;
+  color: rgba(255,255,255,0.06);
+  letter-spacing: 0.02em;
+  user-select: none;
+  transition: color 0.4s ease;
+}
+
+.footer-img-wrap.active .fp-roman {
+  color: rgba(255,255,255,0.1);
+}
+
+/* Diagonal accent line on placeholders */
+.footer-img-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 40px,
+    rgba(255,255,255,0.012) 40px,
+    rgba(255,255,255,0.012) 41px
+  );
+}
+
+/* Image overlay (subtle gradient at bottom) */
+.footer-img-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to top, rgba(8,8,8,0.85) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Caption on hover panels */
+.footer-img-caption {
+  position: absolute;
+  /* Sits above the social block (which is ~6rem tall from bottom 2rem) */
+  bottom: 9.5rem;
+  left: 2rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  transform: translateY(6px);
+  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+
+.footer-img-wrap.active .footer-img-caption {
+  transform: translateY(0);
+}
+
+.fic-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+}
+
+.fic-title {
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.01em;
+}
+
+/* ── Social + Copyright block ── */
+.footer-social-block {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-social-icons {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+}
+
+.footer-social-icon {
+  color: rgba(255,255,255,0.4);
+  transition: color 0.25s ease, transform 0.25s ease;
+  display: flex;
+  align-items: center;
+}
+
+.footer-social-icon:hover {
+  color: rgba(255,255,255,0.9);
+  transform: translateY(-2px);
+}
+
+.footer-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.footer-org {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.55);
+  text-transform: uppercase;
+}
+
+.footer-year {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.25);
+}
+
+/* ── Right Navigation Panel ── */
+.footer-right-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 3.5rem 2.5rem;
+  background: #080808;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Iris Canvas Overlay ── */
+#iris-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: none;
+  pointer-events: none;
+}
+
+/* Subtle vertical grain line */
+.footer-right-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* Top bar */
+.footer-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: auto;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.footer-nav-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.28);
+  text-transform: uppercase;
+}
+
+.footer-back-btn {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.footer-back-btn:hover {
+  border-color: rgba(255,255,255,0.55);
+  color: #fff;
+  transform: translateX(-2px);
+}
+
+/* ── Navigation List ── */
+.footer-nav-list {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  gap: 0;
+  padding: 1rem 0;
+}
+
+/* The nav has a "dim others on hover" effect via CSS */
+.footer-nav-list:hover .footer-nav-item {
+  opacity: 0.22;
+}
+
+.footer-nav-list:hover .footer-nav-item:hover {
+  opacity: 1;
+}
+
+.footer-nav-item {
+  display: flex;
+  align-items: baseline;
+  gap: 1.2rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 0.25s ease, padding-left 0.3s cubic-bezier(0.16,1,0.3,1);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-nav-item:first-child {
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-nav-item:hover {
+  padding-left: 0.5rem;
+}
+
+/* Hover fill bar */
+.footer-nav-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.035);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.16,1,0.3,1);
+}
+
+.footer-nav-item:hover::before {
+  transform: scaleX(1);
+}
+
+.fnav-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.3);
+  min-width: 2.2rem;
+  transition: color 0.25s ease;
+}
+
+.footer-nav-item:hover .fnav-num {
+  color: rgba(255,255,255,0.55);
+}
+
+.fnav-text {
+  font-family: 'Bebas Neue', 'Space Grotesk', sans-serif;
+  font-size: clamp(2.4rem, 4.5vw, 4.2rem);
+  letter-spacing: 0.03em;
+  line-height: 1;
+  color: #fff;
+  flex: 1;
+}
+
+.fnav-arrow {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.25);
+  transition: color 0.25s ease, transform 0.3s cubic-bezier(0.16,1,0.3,1);
+  margin-left: auto;
+}
+
+.footer-nav-item:hover .fnav-arrow {
+  color: rgba(255,255,255,0.9);
+  transform: translate(3px, -3px);
+}
+
+/* CTA item: JOIN US gets a special accent */
+.footer-nav-item--cta .fnav-text {
+  background: linear-gradient(90deg, #fff 0%, rgba(255,255,255,0.7) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Bottom tagline ── */
+.footer-nav-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.footer-tagline {
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.32);
+  letter-spacing: 0.01em;
+}
+
+.footer-attr {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.18);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .footer-left-panel {
+    width: 35%;
+  }
+  .footer-right-panel {
+    padding: 1.5rem 2rem 2rem;
+  }
+  .fnav-text {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+  }
+}
+
+@media (max-width: 640px) {
+  #scene-footer {
+    flex-direction: column;
+  }
+  .footer-left-panel {
+    width: 100%;
+    height: 30%;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .footer-right-panel {
+    padding: 1.2rem 1.5rem 1.5rem;
+  }
+  .footer-logo-circle-container {
+    width: min(44vw, 150px);
+  }
+  .footer-social-block {
+    bottom: 0.8rem;
+    left: 1rem;
+  }
+}
