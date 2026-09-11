@@ -77,9 +77,9 @@
       return;
     }
 
-    const leftElements = sceneEl.querySelectorAll('.p-col-left > *, .p-col-exist-left > *, .p-absurd-hero-left > *');
+    const leftElements = sceneEl.querySelectorAll('.p-col-left > *, .p-exist-crown > *, .p-exist-pod-top-left, .p-exist-pod-bottom-left, .p-absurd-hero-left > *');
     const centerArtwork = sceneEl.querySelector('.p-artwork-container, .p-exist-figure-inner');
-    const rightElements = sceneEl.querySelectorAll('.p-col-right > *, .p-col-exist-right > *, .p-absurd-feature-wrap > *, .p-absurd-bottom-row > *');
+    const rightElements = sceneEl.querySelectorAll('.p-col-right > *, .p-exist-pod-top-right, .p-exist-pod-bottom-right, .p-absurd-feature-wrap > *, .p-absurd-bottom-row > *');
 
     // Left Column entrance
     if (leftElements.length > 0) {

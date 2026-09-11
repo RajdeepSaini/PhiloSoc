@@ -229,8 +229,8 @@
 
     <!-- =========================================================
          SCENE 2: EXISTENTIALISM (EMERGES FROM RIGHT · WHITE BG)
-         Heroic purple suit & bowler hat rising from floor with EXISTENTIALISM;
-         Surrounding elements framed on left and right with zero collisions.
+         Freeform Surrealist Layout: Elements orbit the central
+         Magritte figure, utilising all available space dynamically.
     ========================================================== -->
     <section class="p-scene" id="scene-2-existentialism" aria-label="Philosophy 02: Existentialism">
       <div class="p-gradient-bg-light" aria-hidden="true"></div>
@@ -254,87 +254,101 @@
         </div>
       </div>
 
-      <!-- Surrounding Editorial Content -->
-      <div class="p-stage-wrap p-stage-exist">
-        <div class="p-exist-layout">
-          
-          <!-- Left Column: Manifesto & Thinkers -->
-          <div class="p-col-exist-left">
-            <div class="p-branch-badge">
-              <span class="p-branch-dot"></span>
-              <span>BRANCH 02 · RADICAL FREEDOM</span>
-            </div>
-
-            <p class="p-branch-lead" style="font-size: 1.18rem;">
-              "Existence precedes essence — man first exists, encounters himself, surges up into the world, and defines himself afterwards."
-            </p>
-
-            <div class="p-quote-box">
-              <p class="p-quote-text">
-                "Man is condemned to be free; because once thrown into the world, he is responsible for everything he does."
-              </p>
-              <span class="p-quote-author">— Jean-Paul Sartre · Being and Nothingness</span>
-            </div>
-
-            <div class="p-thinkers-row">
-              <span class="p-thinker-tag">SARTRE</span>
-              <span class="p-thinker-tag">NIETZSCHE</span>
-              <span class="p-thinker-tag">KIERKEGAARD</span>
-              <span class="p-thinker-tag">DE BEAUVOIR</span>
-            </div>
+      <!-- Dynamic Freeform Editorial Canvas -->
+      <div class="p-stage-wrap p-stage-exist-canvas">
+        
+        <!-- Top Crown: Core Thesis bridging across the upper space -->
+        <header class="p-exist-crown">
+          <div class="p-branch-badge">
+            <span class="p-branch-dot"></span>
+            <span>BRANCH 02 · RADICAL FREEDOM</span>
           </div>
+          <p class="p-exist-manifesto">
+            "Existence precedes essence — man first exists, encounters himself, surges up into the world, and defines himself afterwards."
+          </p>
+        </header>
 
-          <!-- Right Column: Core Concept Cards & Navigation -->
-          <div class="p-col-exist-right">
-            <div class="p-inquiry-header">
-              <span class="p-ih-label">CORE CONCEPTS</span>
-              <span class="p-ih-index">02 / 04</span>
-            </div>
-
-            <div class="p-inquiry-list">
-              <article class="p-inquiry-item" tabindex="0">
+        <!-- Orbiting Pillars & Content around the central figure -->
+        <div class="p-exist-orbit-grid">
+          
+          <!-- Upper Row: Flanking the Bowler Hat -->
+          <div class="p-exist-row-upper">
+            <!-- Upper Left: 01 Radical Freedom & Vertigo -->
+            <div class="p-exist-pod p-exist-pod-top-left">
+              <div class="p-exist-card">
                 <span class="p-item-num">01</span>
                 <div class="p-item-body">
                   <h3 class="p-item-title">Radical Freedom &amp; Vertigo</h3>
                   <p class="p-item-text">
-                    There is no predetermined blueprint, divine destiny, or biological excuse. With every action, you forge human nature in your image.
+                    There is no predetermined blueprint, divine destiny, or biological excuse. With every conscious action, you forge human nature in your image.
                   </p>
                 </div>
-              </article>
+              </div>
+            </div>
 
-              <article class="p-inquiry-item" tabindex="0">
+            <!-- Upper Right: Sartre's Paradox on Condemnation -->
+            <div class="p-exist-pod p-exist-pod-top-right">
+              <div class="p-exist-quote-card">
+                <span class="p-exist-quote-tag">THE CONDEMNATION OF CHOICE</span>
+                <blockquote class="p-quote-text" style="font-size: 0.95rem; line-height: 1.46; margin: 0.3rem 0 0.5rem 0;">
+                  "Man is condemned to be free; because once thrown into the world, he is responsible for everything he does."
+                </blockquote>
+                <span class="p-quote-author">— Jean-Paul Sartre · Being and Nothingness</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Clear Typographic Channel for EXISTENTIALISM -->
+          <div class="p-exist-spacer-channel" aria-hidden="true"></div>
+
+          <!-- Lower Row: Flanking the Purple Torso -->
+          <div class="p-exist-row-lower">
+            <!-- Lower Left: 02 Bad Faith & Thinkers -->
+            <div class="p-exist-pod p-exist-pod-bottom-left">
+              <div class="p-exist-card">
                 <span class="p-item-num">02</span>
                 <div class="p-item-body">
                   <h3 class="p-item-title">Bad Faith (Mauvaise Foi)</h3>
                   <p class="p-item-text">
-                    The quiet cowardice of pretending you have no choice — hiding behind institutional roles, societal scripts, or fatalism to avoid responsibility.
+                    The quiet cowardice of pretending you have no choice — hiding behind institutional roles, societal scripts, or fatalism to flee accountability.
                   </p>
                 </div>
-              </article>
+              </div>
 
-              <article class="p-inquiry-item" tabindex="0">
+              <div class="p-thinkers-row" style="margin-top: 0.6rem;">
+                <span class="p-thinker-tag">SARTRE</span>
+                <span class="p-thinker-tag">NIETZSCHE</span>
+                <span class="p-thinker-tag">KIERKEGAARD</span>
+                <span class="p-thinker-tag">DE BEAUVOIR</span>
+              </div>
+            </div>
+
+            <!-- Lower Right: 03 Authenticity & Navigation Controls -->
+            <div class="p-exist-pod p-exist-pod-bottom-right">
+              <div class="p-exist-card">
                 <span class="p-item-num">03</span>
                 <div class="p-item-body">
                   <h3 class="p-item-title">Authenticity &amp; Self-Authorship</h3>
                   <p class="p-item-text">
-                    Living authentically requires confronting anxiety (Angst) and courageously choosing your own values in a universe without external validation.
+                    Living authentically requires confronting anxiety (Angst) and courageously authoring your own values in a universe devoid of external validation.
                   </p>
                 </div>
-              </article>
-            </div>
+              </div>
 
-            <div class="p-actions-row">
-              <button type="button" class="p-btn-next" data-goto="3" aria-label="Proceed to Absurdism">
-                <span>Next: Absurdism</span>
-                <span>→</span>
-              </button>
-              <button type="button" class="p-btn-prev" data-goto="1" aria-label="Back to Stoicism">
-                <span>← Stoicism</span>
-              </button>
+              <div class="p-actions-row" style="margin-top: 0.6rem;">
+                <button type="button" class="p-btn-next" data-goto="3" aria-label="Proceed to Absurdism">
+                  <span>Next: Absurdism</span>
+                  <span>→</span>
+                </button>
+                <button type="button" class="p-btn-prev" data-goto="1" aria-label="Back to Stoicism">
+                  <span>← Stoicism</span>
+                </button>
+              </div>
             </div>
           </div>
 
         </div>
+
       </div>
     </section>
 
