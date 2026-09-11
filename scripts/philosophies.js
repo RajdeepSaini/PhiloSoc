@@ -105,6 +105,20 @@
       });
     }
 
+    // Absurdism Mountain entrance from bottom-right
+    const mountainWrap = sceneEl.querySelector('.p-absurd-mountain-wrap');
+    if (mountainWrap) {
+      anime({
+        targets: mountainWrap,
+        opacity: [0, 1],
+        translateX: [30, 0],
+        translateY: [30, 0],
+        delay: 160,
+        duration: 750,
+        easing: 'cubicBezier(0.16, 1, 0.3, 1)'
+      });
+    }
+
     // Right Column elements entrance
     if (rightElements.length > 0) {
       anime({

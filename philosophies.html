@@ -55,7 +55,6 @@
          SCENE 0: HERO (BASE LAYER · PAPER WHITE)
     ========================================================== -->
     <section class="p-scene" id="scene-0-hero" aria-label="Hero Section">
-      <!-- Vignette and grain overlays matching main landing page -->
       <div class="p-gradient-bg-light" aria-hidden="true"></div>
       <div class="p-grain" aria-hidden="true"></div>
 
@@ -107,7 +106,7 @@
         </div>
       </div>
 
-      <!-- Scroll cue matching landing page -->
+      <!-- Scroll cue -->
       <div class="p-scroll-cue" id="p-scroll-cue" role="button" tabindex="0" aria-label="Scroll to explore philosophies">
         <div class="p-scroll-mouse" aria-hidden="true">
           <span class="p-scroll-wheel"></span>
@@ -230,7 +229,7 @@
 
     <!-- =========================================================
          SCENE 2: EXISTENTIALISM (EMERGES FROM RIGHT · WHITE BG)
-         Center: Magritte surreal figure with bowler hat
+         Center: Large Magritte surreal figure (headline is on the image)
     ========================================================== -->
     <section class="p-scene" id="scene-2-existentialism" aria-label="Philosophy 02: Existentialism">
       <div class="p-gradient-bg-light" aria-hidden="true"></div>
@@ -242,18 +241,16 @@
       </div>
 
       <div class="p-stage-wrap">
-        <div class="p-tripartite-grid">
+        <div class="p-tripartite-grid p-grid-exist">
           
-          <!-- Left: Identity, Question & Axiom -->
+          <!-- Left: Narrative, Lead Question & Axiom (No duplicate title) -->
           <div class="p-col-left">
             <div class="p-branch-badge">
               <span class="p-branch-dot"></span>
               <span>BRANCH 02 · RADICAL FREEDOM</span>
             </div>
 
-            <h2 class="p-branch-title">EXISTENTIALISM</h2>
-
-            <p class="p-branch-lead">
+            <p class="p-branch-lead" style="font-size: 1.28rem;">
               "Existence precedes essence — man first exists, encounters himself, surges up into the world, and defines himself afterwards."
             </p>
 
@@ -272,14 +269,14 @@
             </div>
           </div>
 
-          <!-- Center: Artwork Anchor -->
+          <!-- Center: Heroically Sized Existentialism Artwork -->
           <div class="p-col-center">
-            <div class="p-artwork-container">
+            <div class="p-artwork-container p-artwork-exist">
               <div class="p-artwork-aura" aria-hidden="true"></div>
               <img
                 src="assets/images/exist.png"
-                alt="Existentialism Surreal Figure"
-                class="p-center-img"
+                alt="Existentialism"
+                class="p-center-img p-img-exist"
                 draggable="false"
               />
               <span class="p-artwork-caption">THE UNWRITTEN SELF · PARIS 1943</span>
@@ -342,8 +339,8 @@
 
     <!-- =========================================================
          SCENE 3: ABSURDISM (EMERGES FROM TOP · BLACK BG)
-         Center: Sisyphus pushing the giant stone up the mountain
-         Featuring: "One must imagine Sisyphus happy" and WHY!
+         Sisyphus mountain anchored at bottom-right;
+         Details & "One must imagine Sisyphus happy" above on left/center
     ========================================================== -->
     <section class="p-scene" id="scene-3-absurdism" aria-label="Philosophy 03: Absurdism">
       <div class="p-gradient-bg-dark" aria-hidden="true"></div>
@@ -354,11 +351,22 @@
         <span>↑</span>
       </div>
 
-      <div class="p-stage-wrap">
-        <div class="p-tripartite-grid">
+      <!-- Sisyphus Climbing the Mountain (Anchored at Bottom-Right) -->
+      <div class="p-absurd-mountain-wrap" aria-hidden="true">
+        <img
+          src="assets/images/absurd.png"
+          alt="Sisyphus pushing the boulder up the mountain slope"
+          class="p-absurd-mountain-img"
+          draggable="false"
+        />
+      </div>
+
+      <!-- Editorial Content (Arranged above and to the left of the mountain) -->
+      <div class="p-stage-wrap p-stage-absurd">
+        <div class="p-absurd-grid">
           
           <!-- Left: Identity, Question & Thinkers -->
-          <div class="p-col-left">
+          <div class="p-col-left p-col-absurd-left">
             <div class="p-branch-badge">
               <span class="p-branch-dot"></span>
               <span>BRANCH 03 · THE REBEL'S LAUGHTER</span>
@@ -384,22 +392,8 @@
             </div>
           </div>
 
-          <!-- Center: Artwork Anchor (Sisyphus & Boulder) -->
-          <div class="p-col-center">
-            <div class="p-artwork-container">
-              <div class="p-artwork-aura" aria-hidden="true"></div>
-              <img
-                src="assets/images/absurd.png"
-                alt="Sisyphus pushing the boulder up the mountain"
-                class="p-center-img"
-                draggable="false"
-              />
-              <span class="p-artwork-caption">THE MYTH OF SISYPHUS · THE ENDLESS ROCK</span>
-            </div>
-          </div>
-
           <!-- Right: Famous Quote & Detailed "WHY?" Explanation -->
-          <div class="p-col-right">
+          <div class="p-col-right p-col-absurd-right">
             <div class="p-inquiry-header">
               <span class="p-ih-label">THE SISYPHEAN TRIUMPH</span>
               <span class="p-ih-index">03 / 04</span>
@@ -438,7 +432,7 @@
 
     <!-- =========================================================
          SCENE 4: SKEPTICISM (EMERGES FROM LEFT · WHITE BG)
-         Center: Antique brass balance scales in suspended equilibrium
+         Center: Large, majestic antique brass balance scales
     ========================================================== -->
     <section class="p-scene" id="scene-4-skepticism" aria-label="Philosophy 04: Skepticism">
       <div class="p-gradient-bg-light" aria-hidden="true"></div>
@@ -480,14 +474,14 @@
             </div>
           </div>
 
-          <!-- Center: Artwork Anchor (Scales in Balance) -->
+          <!-- Center: Enlarged Artwork Anchor (Scales in Balance) -->
           <div class="p-col-center">
-            <div class="p-artwork-container">
+            <div class="p-artwork-container p-artwork-skept">
               <div class="p-artwork-aura" aria-hidden="true"></div>
               <img
                 src="assets/images/skept.png"
                 alt="Antique Balance Scales"
-                class="p-center-img"
+                class="p-center-img p-img-skept"
                 draggable="false"
               />
               <span class="p-artwork-caption">EPOCHÉ · THE EQUIPOISE OF EVIDENCE</span>

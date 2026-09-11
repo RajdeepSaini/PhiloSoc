@@ -290,7 +290,7 @@ html, body {
 }
 
 /* ================================================================
-   ATMOSPHERIC VIGNETTES & GRAIN (Shared with Landing Page)
+   ATMOSPHERIC VIGNETTES & GRAIN
    ================================================================ */
 .p-gradient-bg-light {
   position: absolute;
@@ -383,7 +383,6 @@ html, body {
   opacity: 0.4;
 }
 
-/* Directional entry badge indicator */
 .p-entry-badge {
   position: absolute;
   top: 1.6rem;
@@ -570,8 +569,7 @@ html, body {
 }
 
 /* ================================================================
-   TRIPARTITE MODERN LAYOUT: [LEFT] [CENTER ARTWORK] [RIGHT]
-   Statue/image centered with content organized around it.
+   STAGE WRAP & GENERAL GRID
    ================================================================ */
 .p-stage-wrap {
   position: relative;
@@ -587,19 +585,19 @@ html, body {
 
 .p-tripartite-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.95fr 1.25fr;
-  gap: 2.8rem;
+  grid-template-columns: 1.15fr 1fr 1.25fr;
+  gap: 2.6rem;
   width: 100%;
-  max-width: 1440px;
+  max-width: 1460px;
   align-items: center;
   margin: 0 auto;
 }
 
-/* ── Left Column: Identity, Lead Thesis & Quotes ── */
+/* ── Left Column: Identity & Quotations ── */
 .p-col-left {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.15rem;
 }
 
 .p-branch-badge {
@@ -631,7 +629,7 @@ html, body {
 
 .p-branch-lead {
   font-family: 'Fraunces', Georgia, serif;
-  font-size: clamp(1.15rem, 1.6vw, 1.4rem);
+  font-size: clamp(1.12rem, 1.55vw, 1.38rem);
   line-height: 1.42;
   font-weight: 300;
   margin: 0;
@@ -641,7 +639,7 @@ html, body {
 .p-quote-box {
   border-left: 2px solid currentColor;
   padding-left: 1.1rem;
-  margin: 0.3rem 0;
+  margin: 0.2rem 0;
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
@@ -683,7 +681,7 @@ html, body {
   text-transform: uppercase;
 }
 
-/* ── Center Column: Iconic Artwork Anchor with Halo ── */
+/* ── Center Column: Artwork Anchor ── */
 .p-col-center {
   display: flex;
   align-items: center;
@@ -697,38 +695,35 @@ html, body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 380px;
-  height: 58vh;
-  max-height: 520px;
+  max-width: 420px;
+  height: 60vh;
+  max-height: 560px;
 }
 
-/* Ambient Radial Glow / Architectural Arch behind statue */
 .p-artwork-aura {
   position: absolute;
-  width: 320px;
-  height: 320px;
+  width: 360px;
+  height: 360px;
   border-radius: 50%;
   pointer-events: none;
   z-index: 1;
 }
 
-#scene-1-stoicism .p-artwork-aura,
-#scene-3-absurdism .p-artwork-aura {
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 50%, transparent 75%);
+#scene-1-stoicism .p-artwork-aura {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.03) 55%, transparent 75%);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 #scene-2-existentialism .p-artwork-aura,
 #scene-4-skepticism .p-artwork-aura {
-  background: radial-gradient(circle, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.015) 50%, transparent 75%);
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.015) 55%, transparent 75%);
   border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-/* Statue / Cutout Image */
 .p-center-img {
   position: relative;
   z-index: 2;
-  max-height: 52vh;
+  max-height: 56vh;
   max-width: 100%;
   width: auto;
   object-fit: contain;
@@ -739,19 +734,6 @@ html, body {
 
 #scene-1-stoicism .p-center-img {
   filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.75)) contrast(1.08) brightness(0.96);
-}
-
-#scene-2-existentialism .p-center-img {
-  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.12));
-}
-
-#scene-3-absurdism .p-center-img {
-  filter: drop-shadow(0 25px 40px rgba(0, 0, 0, 0.85)) contrast(1.1);
-  border-radius: 4px;
-}
-
-#scene-4-skepticism .p-center-img {
-  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.12));
 }
 
 .p-artwork-caption {
@@ -765,7 +747,7 @@ html, body {
   z-index: 3;
 }
 
-/* ── Right Column: Dialectical Cards & Absurdism Deep Dive ── */
+/* ── Right Column: Cards & Actions ── */
 .p-col-right {
   display: flex;
   flex-direction: column;
@@ -811,13 +793,11 @@ html, body {
   position: relative;
 }
 
-#scene-1-stoicism .p-inquiry-item,
-#scene-3-absurdism .p-inquiry-item {
+#scene-1-stoicism .p-inquiry-item {
   border-color: rgba(245, 243, 239, 0.16);
   background: rgba(255, 255, 255, 0.025);
 }
-#scene-1-stoicism .p-inquiry-item:hover,
-#scene-3-absurdism .p-inquiry-item:hover {
+#scene-1-stoicism .p-inquiry-item:hover {
   border-color: rgba(245, 243, 239, 0.4);
   background: rgba(255, 255, 255, 0.06);
   transform: translateX(4px);
@@ -866,46 +846,6 @@ html, body {
   opacity: 0.8;
 }
 
-/* SPECIAL: Absurdism Sisyphus Feature Box */
-.p-absurd-feature {
-  border: 1px solid rgba(245, 243, 239, 0.35);
-  background: rgba(255, 255, 255, 0.04);
-  padding: 1.25rem 1.4rem;
-  border-radius: 4px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  position: relative;
-}
-
-.p-absurd-quote-banner {
-  font-family: 'Fraunces', Georgia, serif;
-  font-style: italic;
-  font-size: 1.15rem;
-  font-weight: 400;
-  line-height: 1.35;
-  color: #ffffff;
-  border-left: 2px solid #ffffff;
-  padding-left: 0.9rem;
-  margin: 0;
-}
-
-.p-absurd-why-label {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.54rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: rgba(245, 243, 239, 0.6);
-}
-
-.p-absurd-why-text {
-  font-family: 'Newsreader', Georgia, serif;
-  font-size: 0.88rem;
-  line-height: 1.5;
-  color: rgba(245, 243, 239, 0.9);
-  margin: 0;
-}
-
 /* Action Controls */
 .p-actions-row {
   display: flex;
@@ -931,7 +871,7 @@ html, body {
   user-select: none;
 }
 
-/* Button variants for dark scenes */
+/* Dark scene buttons */
 #scene-1-stoicism .p-btn-next,
 #scene-3-absurdism .p-btn-next {
   background: #f5f3ef;
@@ -955,7 +895,7 @@ html, body {
   border-color: #f5f3ef;
 }
 
-/* Button variants for light scenes */
+/* Light scene buttons */
 #scene-2-existentialism .p-btn-next,
 #scene-4-skepticism .p-btn-next {
   background: #080808;
@@ -980,6 +920,155 @@ html, body {
 }
 
 /* ================================================================
+   SCENE 2: EXISTENTIALISM SPECIAL LAYOUT
+   (Big artwork, no duplicated text title, balanced surrounding)
+   ================================================================ */
+.p-grid-exist {
+  grid-template-columns: 1.05fr 1.25fr 1.25fr;
+  gap: 2.8rem;
+}
+
+.p-artwork-exist {
+  max-width: 540px !important;
+  height: 68vh !important;
+  max-height: 580px !important;
+}
+
+.p-artwork-exist .p-artwork-aura {
+  width: 440px;
+  height: 440px;
+}
+
+.p-img-exist {
+  max-height: 65vh !important;
+  max-width: 100% !important;
+  filter: drop-shadow(0 20px 45px rgba(0, 0, 0, 0.14)) !important;
+}
+
+/* ================================================================
+   SCENE 3: ABSURDISM STORYTELLING LAYOUT
+   (Mountain & Sisyphus anchored at bottom-right, text floating left/top)
+   ================================================================ */
+.p-stage-absurd {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  padding: 5rem 4rem 3.5rem 4rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+/* Sisyphus Mountain anchored in the bottom-right corner */
+.p-absurd-mountain-wrap {
+  position: absolute;
+  right: -1vw;
+  bottom: 0;
+  width: clamp(520px, 52vw, 860px);
+  height: 68vh;
+  z-index: 3;
+  pointer-events: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.p-absurd-mountain-img {
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+  object-fit: contain;
+  object-position: bottom right;
+  filter: contrast(1.15) brightness(0.92);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.85) 20%, black 100%), linear-gradient(to top, black 70%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.85) 20%, black 100%), linear-gradient(to top, black 70%, transparent 100%);
+}
+
+.p-absurd-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1.35fr;
+  gap: 3.8rem;
+  width: 100%;
+  max-width: 1400px;
+  position: relative;
+  z-index: 5;
+}
+
+.p-col-absurd-left {
+  max-width: 500px;
+}
+
+.p-col-absurd-right {
+  max-width: 620px;
+}
+
+/* Absurdism Sisyphus Feature Box */
+.p-absurd-feature {
+  border: 1px solid rgba(245, 243, 239, 0.35);
+  background: rgba(18, 18, 18, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 1.35rem 1.6rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  position: relative;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
+}
+
+.p-absurd-quote-banner {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-size: 1.22rem;
+  font-weight: 400;
+  line-height: 1.35;
+  color: #ffffff;
+  border-left: 2px solid #ffffff;
+  padding-left: 0.95rem;
+  margin: 0;
+}
+
+.p-absurd-why-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(245, 243, 239, 0.7);
+}
+
+.p-absurd-why-text {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: rgba(245, 243, 239, 0.92);
+  margin: 0;
+}
+
+/* ================================================================
+   SCENE 4: SKEPTICISM SPECIAL LAYOUT
+   (Enlarged majestic balance scales)
+   ================================================================ */
+.p-artwork-skept {
+  max-width: 480px !important;
+  height: 68vh !important;
+  max-height: 620px !important;
+}
+
+.p-artwork-skept .p-artwork-aura {
+  width: 420px;
+  height: 420px;
+}
+
+.p-img-skept {
+  max-height: 66vh !important;
+  max-width: 450px !important;
+  filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.18)) !important;
+}
+
+/* ================================================================
    RESPONSIVE DESIGN (Tablets & Mobile)
    ================================================================ */
 @media (max-width: 1200px) {
@@ -990,6 +1079,10 @@ html, body {
     grid-template-columns: 1fr 0.9fr 1fr;
     gap: 1.8rem;
   }
+  .p-absurd-mountain-wrap {
+    width: 60vw;
+    height: 55vh;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -997,14 +1090,22 @@ html, body {
     padding: 4.6rem 2.2rem 2.2rem 2.2rem;
     overflow-y: auto;
   }
-  .p-tripartite-grid {
+  .p-tripartite-grid,
+  .p-absurd-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
     max-height: 84vh;
     overflow-y: auto;
   }
   .p-artwork-container {
-    height: 36vh;
+    height: 40vh;
+  }
+  .p-absurd-mountain-wrap {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 38vh;
   }
   .p-nav-links {
     display: none;
