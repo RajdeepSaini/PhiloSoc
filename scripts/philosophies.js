@@ -77,17 +77,30 @@
       return;
     }
 
-    const leftElements = sceneEl.querySelectorAll('.p-col-left > *, .p-exist-crown > *, .p-exist-pod-top-left, .p-exist-pod-bottom-left, .p-absurd-hero-left > *');
+    const headerElements = sceneEl.querySelectorAll('.p-exist-header > *, .p-exist-shelf-card');
+    const leftElements = sceneEl.querySelectorAll('.p-col-left > *, .p-exist-flank-left > *, .p-absurd-hero-left > *');
     const centerArtwork = sceneEl.querySelector('.p-artwork-container, .p-exist-figure-inner');
-    const rightElements = sceneEl.querySelectorAll('.p-col-right > *, .p-exist-pod-top-right, .p-exist-pod-bottom-right, .p-absurd-feature-wrap > *, .p-absurd-bottom-row > *');
+    const rightElements = sceneEl.querySelectorAll('.p-col-right > *, .p-exist-flank-right > *, .p-absurd-feature-wrap > *, .p-absurd-bottom-row > *');
 
-    // Left Column entrance
+    // Header elements entrance (Existentialism canopy)
+    if (headerElements.length > 0) {
+      anime({
+        targets: headerElements,
+        opacity: [0, 1],
+        translateY: [14, 0],
+        delay: anime.stagger(50, { start: 100 }),
+        duration: 560,
+        easing: 'cubicBezier(0.16, 1, 0.3, 1)'
+      });
+    }
+
+    // Left Column / Flank entrance
     if (leftElements.length > 0) {
       anime({
         targets: leftElements,
         opacity: [0, 1],
         translateY: [16, 0],
-        delay: anime.stagger(45, { start: 140 }),
+        delay: anime.stagger(45, { start: 180 }),
         duration: 580,
         easing: 'cubicBezier(0.16, 1, 0.3, 1)'
       });
