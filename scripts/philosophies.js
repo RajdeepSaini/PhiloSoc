@@ -1,10 +1,10 @@
 /* ================================================================
    scripts/philosophies.js — PhiloSoc Directional Scene Controller
-   Choreography:
-     0 -> 1: Slide UP from bottom (covering 0) [Black bg]
-     1 -> 2: Slide IN from right (covering 1)  [White bg]
-     2 -> 3: Slide DOWN from top (covering 2)  [Black bg]
-     3 -> 4: Slide IN from left (covering 3)   [White bg]
+   The Four Philosophies:
+     0 -> 1: Slide UP from bottom (Stoicism)       [Black bg]
+     1 -> 2: Slide IN from right (Existentialism)  [White bg]
+     2 -> 3: Slide DOWN from top (Absurdism)       [Black bg]
+     3 -> 4: Slide IN from left (Skepticism)       [White bg]
    Reverse:
      Slides retreat along their arrival vectors, revealing previous.
    ================================================================ */
@@ -25,10 +25,10 @@
 
   const scenes = [
     document.getElementById('scene-0-hero'),
-    document.getElementById('scene-1-epistemology'),
-    document.getElementById('scene-2-metaphysics'),
-    document.getElementById('scene-3-ethics'),
-    document.getElementById('scene-4-logic')
+    document.getElementById('scene-1-stoicism'),
+    document.getElementById('scene-2-existentialism'),
+    document.getElementById('scene-3-absurdism'),
+    document.getElementById('scene-4-skepticism')
   ];
 
   // Scene Tone Map: 0:light, 1:dark, 2:light, 3:dark, 4:light
@@ -77,40 +77,43 @@
       return;
     }
 
-    const titleCols = sceneEl.querySelectorAll('.p-col-title > *');
-    const inquiryCards = sceneEl.querySelectorAll('.p-inquiry-item');
-    const actions = sceneEl.querySelectorAll('.p-actions-row');
+    const leftElements = sceneEl.querySelectorAll('.p-col-left > *');
+    const centerArtwork = sceneEl.querySelector('.p-artwork-container');
+    const rightElements = sceneEl.querySelectorAll('.p-col-right > *');
 
-    if (titleCols.length > 0) {
+    // Left Column elements entrance
+    if (leftElements.length > 0) {
       anime({
-        targets: titleCols,
+        targets: leftElements,
         opacity: [0, 1],
         translateY: [16, 0],
-        delay: anime.stagger(50, { start: 150 }),
-        duration: 600,
+        delay: anime.stagger(45, { start: 140 }),
+        duration: 580,
         easing: 'cubicBezier(0.16, 1, 0.3, 1)'
       });
     }
 
-    if (inquiryCards.length > 0) {
+    // Center Artwork smooth scale & float in
+    if (centerArtwork) {
       anime({
-        targets: inquiryCards,
+        targets: centerArtwork,
         opacity: [0, 1],
-        translateY: [20, 0],
-        delay: anime.stagger(65, { start: 220 }),
-        duration: 650,
+        scale: [0.94, 1],
+        delay: 200,
+        duration: 700,
         easing: 'cubicBezier(0.16, 1, 0.3, 1)'
       });
     }
 
-    if (actions.length > 0) {
+    // Right Column elements entrance
+    if (rightElements.length > 0) {
       anime({
-        targets: actions,
+        targets: rightElements,
         opacity: [0, 1],
-        translateY: [12, 0],
-        delay: 450,
-        duration: 500,
-        easing: 'easeOutQuart'
+        translateY: [18, 0],
+        delay: anime.stagger(60, { start: 240 }),
+        duration: 620,
+        easing: 'cubicBezier(0.16, 1, 0.3, 1)'
       });
     }
   }
@@ -122,7 +125,6 @@
     }
 
     isTransitioning = true;
-    const previousScene = currentScene;
     currentScene = target;
 
     updateDots(target);
@@ -245,7 +247,7 @@
       animateSceneEntrance(0);
     }, 100);
 
-    // Scroll Cue in Hero -> Go to Scene 1
+    // Scroll Cue in Hero -> Go to Scene 1 (Stoicism)
     const scrollCue = document.getElementById('p-scroll-cue');
     if (scrollCue) {
       scrollCue.addEventListener('click', function () {
