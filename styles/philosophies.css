@@ -569,7 +569,7 @@ html, body {
 }
 
 /* ================================================================
-   STAGE WRAP & GENERAL GRID
+   STAGE WRAP & TRIPARTITE GRID (Shared)
    ================================================================ */
 .p-stage-wrap {
   position: relative;
@@ -714,7 +714,6 @@ html, body {
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-#scene-2-existentialism .p-artwork-aura,
 #scene-4-skepticism .p-artwork-aura {
   background: radial-gradient(circle, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.015) 55%, transparent 75%);
   border: 1px solid rgba(0, 0, 0, 0.06);
@@ -920,54 +919,90 @@ html, body {
 }
 
 /* ================================================================
-   SCENE 2: EXISTENTIALISM SPECIAL LAYOUT
-   (Big artwork, no duplicated text title, balanced surrounding)
+   SCENE 2: EXISTENTIALISM (MATCHING USER SKETCH)
+   Figure rises from the bottom of the screen with heroic scale.
+   No duplicate text heading. Surrounding elements frame the torso.
    ================================================================ */
-.p-grid-exist {
-  grid-template-columns: 1.05fr 1.25fr 1.25fr;
-  gap: 2.8rem;
+.p-exist-center-figure {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 82vh;
+  max-height: 840px;
+  width: auto;
+  z-index: 3;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
 }
 
-.p-artwork-exist {
-  max-width: 540px !important;
-  height: 68vh !important;
-  max-height: 580px !important;
+.p-exist-hero-img {
+  height: 100%;
+  width: auto;
+  max-width: 92vw;
+  object-fit: contain;
+  object-position: bottom center;
+  filter: drop-shadow(0 -10px 45px rgba(0, 0, 0, 0.12));
 }
 
-.p-artwork-exist .p-artwork-aura {
-  width: 440px;
-  height: 440px;
+.p-exist-aura {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.05) 0%, transparent 70%);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  pointer-events: none;
+  z-index: -1;
 }
 
-.p-img-exist {
-  max-height: 65vh !important;
-  max-width: 100% !important;
-  filter: drop-shadow(0 20px 45px rgba(0, 0, 0, 0.14)) !important;
+.p-exist-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.9fr 1.25fr;
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 1460px;
+  align-items: center;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+}
+
+.p-col-exist-spacer {
+  pointer-events: none;
+  height: 100%;
 }
 
 /* ================================================================
-   SCENE 3: ABSURDISM STORYTELLING LAYOUT
-   (Mountain & Sisyphus anchored at bottom-right, text floating left/top)
+   SCENE 3: ABSURDISM (MATCHING USER SKETCH)
+   Sisyphus and boulder climb the mountain slope on the bottom-right.
+   All text and explanation sit in the open space on left and top.
    ================================================================ */
 .p-stage-absurd {
   position: relative;
   z-index: 5;
   width: 100%;
   height: 100%;
-  padding: 5rem 4rem 3.5rem 4rem;
+  padding: 4.8rem 4rem 3rem 4rem;
   box-sizing: border-box;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
 }
 
 /* Sisyphus Mountain anchored in the bottom-right corner */
 .p-absurd-mountain-wrap {
   position: absolute;
-  right: -1vw;
+  right: 0;
   bottom: 0;
-  width: clamp(520px, 52vw, 860px);
-  height: 68vh;
+  width: clamp(560px, 58vw, 940px);
+  height: 80vh;
+  max-height: 820px;
   z-index: 3;
   pointer-events: none;
   display: flex;
@@ -976,28 +1011,27 @@ html, body {
 }
 
 .p-absurd-mountain-img {
-  max-height: 100%;
-  max-width: 100%;
-  width: auto;
+  height: 100%;
+  width: 100%;
   object-fit: contain;
   object-position: bottom right;
-  filter: contrast(1.15) brightness(0.92);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.85) 20%, black 100%), linear-gradient(to top, black 70%, transparent 100%);
-  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.85) 20%, black 100%), linear-gradient(to top, black 70%, transparent 100%);
+  filter: contrast(1.18) brightness(0.95);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.85) 18%, black 100%), linear-gradient(to top, black 72%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.85) 18%, black 100%), linear-gradient(to top, black 72%, transparent 100%);
 }
 
 .p-absurd-grid {
   display: grid;
-  grid-template-columns: 1.15fr 1.35fr;
+  grid-template-columns: 1.15fr 1.25fr;
   gap: 3.8rem;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1420px;
   position: relative;
   z-index: 5;
 }
 
 .p-col-absurd-left {
-  max-width: 500px;
+  max-width: 520px;
 }
 
 .p-col-absurd-right {
@@ -1007,65 +1041,64 @@ html, body {
 /* Absurdism Sisyphus Feature Box */
 .p-absurd-feature {
   border: 1px solid rgba(245, 243, 239, 0.35);
-  background: rgba(18, 18, 18, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  padding: 1.35rem 1.6rem;
+  background: rgba(18, 18, 18, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 1.4rem 1.65rem;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 0.85rem;
   position: relative;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
 }
 
 .p-absurd-quote-banner {
   font-family: 'Fraunces', Georgia, serif;
   font-style: italic;
-  font-size: 1.22rem;
+  font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.35;
   color: #ffffff;
   border-left: 2px solid #ffffff;
-  padding-left: 0.95rem;
+  padding-left: 1rem;
   margin: 0;
 }
 
 .p-absurd-why-label {
   font-family: 'Space Mono', monospace;
-  font-size: 0.55rem;
+  font-size: 0.56rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(245, 243, 239, 0.7);
+  color: rgba(245, 243, 239, 0.72);
 }
 
 .p-absurd-why-text {
   font-family: 'Newsreader', Georgia, serif;
-  font-size: 0.88rem;
-  line-height: 1.5;
-  color: rgba(245, 243, 239, 0.92);
+  font-size: 0.89rem;
+  line-height: 1.52;
+  color: rgba(245, 243, 239, 0.94);
   margin: 0;
 }
 
 /* ================================================================
-   SCENE 4: SKEPTICISM SPECIAL LAYOUT
-   (Enlarged majestic balance scales)
+   SCENE 4: SKEPTICISM (ENLARGED MAJESTIC SCALES)
    ================================================================ */
 .p-artwork-skept {
-  max-width: 480px !important;
-  height: 68vh !important;
-  max-height: 620px !important;
+  max-width: 500px !important;
+  height: 72vh !important;
+  max-height: 680px !important;
 }
 
 .p-artwork-skept .p-artwork-aura {
-  width: 420px;
-  height: 420px;
+  width: 440px;
+  height: 440px;
 }
 
 .p-img-skept {
-  max-height: 66vh !important;
-  max-width: 450px !important;
-  filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.18)) !important;
+  max-height: 70vh !important;
+  max-width: 460px !important;
+  filter: drop-shadow(0 25px 40px rgba(0, 0, 0, 0.18)) !important;
 }
 
 /* ================================================================
@@ -1075,13 +1108,14 @@ html, body {
   .p-stage-wrap {
     padding: 4.8rem 2.8rem 2.8rem 2.8rem;
   }
-  .p-tripartite-grid {
-    grid-template-columns: 1fr 0.9fr 1fr;
+  .p-tripartite-grid,
+  .p-exist-grid {
+    grid-template-columns: 1fr 0.8fr 1fr;
     gap: 1.8rem;
   }
   .p-absurd-mountain-wrap {
-    width: 60vw;
-    height: 55vh;
+    width: 65vw;
+    height: 65vh;
   }
 }
 
@@ -1091,21 +1125,31 @@ html, body {
     overflow-y: auto;
   }
   .p-tripartite-grid,
+  .p-exist-grid,
   .p-absurd-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
     max-height: 84vh;
     overflow-y: auto;
   }
+  .p-exist-center-figure {
+    position: relative;
+    left: 0;
+    transform: none;
+    height: 42vh;
+  }
+  .p-col-exist-spacer {
+    display: none;
+  }
   .p-artwork-container {
-    height: 40vh;
+    height: 42vh;
   }
   .p-absurd-mountain-wrap {
     position: relative;
     right: 0;
     bottom: 0;
     width: 100%;
-    height: 38vh;
+    height: 42vh;
   }
   .p-nav-links {
     display: none;

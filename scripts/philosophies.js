@@ -105,6 +105,19 @@
       });
     }
 
+    // Existentialism Center Figure rising from bottom
+    const existFigure = sceneEl.querySelector('.p-exist-center-figure');
+    if (existFigure) {
+      anime({
+        targets: existFigure,
+        opacity: [0, 1],
+        translateY: [25, 0],
+        delay: 180,
+        duration: 750,
+        easing: 'cubicBezier(0.16, 1, 0.3, 1)'
+      });
+    }
+
     // Absurdism Mountain entrance from bottom-right
     const mountainWrap = sceneEl.querySelector('.p-absurd-mountain-wrap');
     if (mountainWrap) {
