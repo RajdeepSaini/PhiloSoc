@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Branches of Inquiry — What are the Different Types of Philosophies? | PhiloSoc</title>
+  <meta name="description"
+    content="An architectural taxonomy of human inquiry — explore Epistemology, Metaphysics, Ethics, and Dialectical Logic at PhiloSoc IIIT Delhi.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Bebas+Neue&family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Pinyon+Script&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/philosophies.css">
+</head>
+
+<body>
+
+  <div id="philosophies-app">
+
+    <!-- =========================================================
+         PERSISTENT NAVIGATION BAR
+    ========================================================== -->
+    <header class="p-nav tone-light" id="p-nav" aria-label="Main navigation">
+      <a href="index.html" class="p-nav-brand" aria-label="PhiloSoc Home">
+        <span class="p-brand-text">PHILOSOC</span>
+        <span class="p-brand-badge">BRANCHES</span>
+      </a>
+
+      <ul class="p-nav-links" role="list">
+        <li><a href="philosophies.html" class="p-nav-link active">Philosophies</a></li>
+        <li><a href="index.html" class="p-nav-link">Home</a></li>
+        <li><a href="index.html#scene-split-stage" class="p-nav-link">About</a></li>
+        <li><a href="index.html#scene-why-join" class="p-nav-link">Community</a></li>
+      </ul>
+
+      <a href="index.html#scene-why-join" class="p-nav-cta">Join Us</a>
+    </header>
+
+    <!-- =========================================================
+         SIDE PROGRESS INDICATOR
+    ========================================================== -->
+    <nav class="p-progress tone-light" id="p-progress" aria-label="Taxonomy progress">
+      <button type="button" class="p-pdot active" data-scene="0" data-label="00 · HERO" aria-label="Hero"></button>
+      <button type="button" class="p-pdot" data-scene="1" data-label="01 · EPISTEMOLOGY" aria-label="Epistemology (from bottom)"></button>
+      <button type="button" class="p-pdot" data-scene="2" data-label="02 · METAPHYSICS" aria-label="Metaphysics (from right)"></button>
+      <button type="button" class="p-pdot" data-scene="3" data-label="03 · ETHICS" aria-label="Ethics (from top)"></button>
+      <button type="button" class="p-pdot" data-scene="4" data-label="04 · LOGIC &amp; MIND" aria-label="Logic (from left)"></button>
+    </nav>
+
+    <!-- =========================================================
+         SCENE 0: HERO (BASE LAYER · PAPER WHITE)
+    ========================================================== -->
+    <section class="p-scene" id="scene-0-hero" aria-label="Hero Section">
+      <!-- Vignette and grain overlays (matching main landing page) -->
+      <div class="p-gradient-bg-light" aria-hidden="true"></div>
+      <div class="p-grain" aria-hidden="true"></div>
+
+      <!-- Corner typographic elements -->
+      <div class="p-corner p-corner-bl" aria-hidden="true">
+        <span class="p-corner-quote">"Wonder is the feeling of a philosopher,<br>and philosophy begins in wonder."</span>
+        <span class="p-corner-attr">— Plato · Theaetetus</span>
+      </div>
+      <div class="p-corner p-corner-br" aria-hidden="true">
+        <span class="p-corner-label">TAXONOMY OF THOUGHT</span>
+        <span class="p-corner-rule"></span>
+      </div>
+
+      <!-- Hero Centerpiece -->
+      <div class="p-hero-inner">
+        <div class="p-hero-eyebrow">
+          <span class="p-hero-dot"></span>
+          <span>ARCHIVAL CLASSIFICATION · VOL. I</span>
+          <span class="p-hero-dot"></span>
+        </div>
+
+        <h1 class="p-hero-title">
+          WHAT ARE THE <span class="p-hero-title-accent">different</span> TYPES OF PHILOSOPHIES?
+        </h1>
+
+        <div class="p-hero-rule-wrap" aria-hidden="true">
+          <span class="p-hero-rule"></span>
+          <span class="p-hero-rule-icon">✦</span>
+          <span class="p-hero-rule"></span>
+        </div>
+
+        <p class="p-hero-subtitle">
+          A dialectic cartography — mapping four fundamental directions of human reason, doubt, duty, and conscious existence.
+        </p>
+
+        <div class="p-hero-directions-grid">
+          <span class="p-hero-dir-pill">
+            <span class="p-hero-dir-arrow">↓</span> BOTTOM · 01 EPISTEMOLOGY
+          </span>
+          <span class="p-hero-dir-pill">
+            <span class="p-hero-dir-arrow">→</span> RIGHT · 02 METAPHYSICS
+          </span>
+          <span class="p-hero-dir-pill">
+            <span class="p-hero-dir-arrow">↑</span> TOP · 03 ETHICS
+          </span>
+          <span class="p-hero-dir-pill">
+            <span class="p-hero-dir-arrow">←</span> LEFT · 04 LOGIC &amp; DIALECTIC
+          </span>
+        </div>
+      </div>
+
+      <!-- Scroll cue matching landing page -->
+      <div class="p-scroll-cue" id="p-scroll-cue" role="button" tabindex="0" aria-label="Scroll to explore philosophies">
+        <div class="p-scroll-mouse" aria-hidden="true">
+          <span class="p-scroll-wheel"></span>
+        </div>
+        <span class="p-scroll-label">SCROLL</span>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SCENE 1: EPISTEMOLOGY (EMERGES FROM BOTTOM · BLACK BG)
+    ========================================================== -->
+    <section class="p-scene" id="scene-1-epistemology" aria-label="Philosophy 01: Epistemology">
+      <div class="p-gradient-bg-dark" aria-hidden="true"></div>
+      <div class="p-grain" aria-hidden="true"></div>
+
+      <div class="p-entry-badge">
+        <span>EMERGES FROM BOTTOM</span>
+        <span>↓</span>
+      </div>
+
+      <div class="p-stage-wrap">
+        <div class="p-stage-grid">
+          
+          <!-- Left: Big Title & Question -->
+          <div class="p-col-title">
+            <div class="p-branch-badge">
+              <span class="p-branch-dot"></span>
+              <span>BRANCH 01 · THEORY OF KNOWLEDGE</span>
+            </div>
+
+            <h2 class="p-branch-title">EPISTEMOLOGY</h2>
+
+            <p class="p-branch-lead">
+              "What can the conscious mind truly know with certainty — and where does belief surrender to doubt?"
+            </p>
+
+            <div class="p-quote-box">
+              <p class="p-quote-text">
+                "I resolved to doubt everything that I could not distinctly perceive to be true... Cogito, ergo sum."
+              </p>
+              <span class="p-quote-author">— René Descartes · Meditations on First Philosophy</span>
+            </div>
+
+            <div class="p-thinkers-row">
+              <span class="p-thinker-tag">DESCARTES</span>
+              <span class="p-thinker-tag">KANT</span>
+              <span class="p-thinker-tag">HUME</span>
+              <span class="p-thinker-tag">POPPER</span>
+              <span class="p-thinker-tag">TURING</span>
+            </div>
+          </div>
+
+          <!-- Right: 3 Inquiry Cards & Actions -->
+          <div class="p-col-inquiry">
+            <div class="p-inquiry-header">
+              <span class="p-ih-label">CORE DIALECTICAL PILLARS</span>
+              <span class="p-ih-index">01 / 04</span>
+            </div>
+
+            <div class="p-inquiry-list">
+              <article class="p-inquiry-item" tabindex="0">
+                <span class="p-item-num">01</span>
+                <div class="p-item-body">
+                  <h3 class="p-item-title">Rationalism vs. Pure Empiricism</h3>
+                  <p class="p-item-text">
+                    Is genuine knowledge built from foundational innate reason, or is the human mind a tabula rasa sculpted strictly by sensory data and feedback loops?
+                  </p>
+                </div>
+              </article>
+
+              <article class="p-inquiry-item" tabindex="0">
+                <span class="p-item-num">02</span>
+                <div class="p-item-body">
+                  <h3 class="p-item-title">The Problem of Induction &amp; Falsification</h3>
+                  <p class="p-item-text">
+                    No amount of confirming observations can establish a universal law, yet a single black swan dismantles certainty. Science progresses by refutation, not proof.
+                  </p>
+                </div>
+              </article>
+
+              <article class="p-inquiry-item" tabindex="0">
+                <span class="p-item-num">03</span>
+                <div class="p-item-body">
+                  <h3 class="p-item-title">Synthetic Truth &amp; Cognitive AI</h3>
+                  <p class="p-item-text">
+                    When language models output fluent prose, do they possess semantic cognition, or are they mere statistical mirrors reflecting human epistemic artifacts?
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <div class="p-actions-row">
+              <button type="button" class="p-btn-next" data-goto="2" aria-label="Proceed to Metaphysics">
+                <span>Next: Metaphysics</span>
+                <span>→</span>
+              </button>
+              <button type="button" class="p-btn-prev" data-goto="0" aria-label="Back to Hero">
+                <span>↑ Top</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SCENE 2: METAPHYSICS (EMERGES FROM RIGHT · WHITE BG)
+    ========================================================== -->
+    <section class="p-scene" id="scene-2-metaphysics" aria-label="Philosophy 02: Metaphysics">
+      <div class="p-gradient-bg-light" aria-hidden="true"></div>
+      <div class="p-grain" aria-hidden="true"></div>
+
+      <div class="p-entry-badge">
+        <span>EMERGES FROM RIGHT</span>
+        <span>→</span>
+      </div>
+
+      <div class="p-stage-wrap">
+        <div class="p-stage-grid">
+          
+          <!-- Left: Big Title & Question -->
+          <div class="p-col-title">
+            <div class="p-branch-badge">
+              <span class="p-branch-dot"></span>
+              <span>BRANCH 02 · ONTOLOGY &amp; REALITY</span>
+            </div>
+
+            <h2 class="p-branch-title">METAPHYSICS</h2>
+
+            <p class="p-branch-lead">
+              "What is the fundamental nature of reality, substance, and the conscious observer?"
+            </p>
+
+            <div class="p-quote-box">
+              <p class="p-quote-text">
+                "Why is there something rather than nothing? For nothing is simpler and easier than something."
+              </p>
+              <span class="p-quote-author">— Gottfried Wilhelm Leibniz · Principles of Nature</span>
+            </div>
+
+            <div class="p-thinkers-row">
+              <span class="p-thinker-tag">ARISTOTLE</span>
+              <span class="p-thinker-tag">SPINOZA</span>
+              <span class="p-thinker-tag">HEIDEGGER</span>
+              <span class="p-thinker-tag">GÖDEL</span>
+              <span class="p-thinker-tag">CHALMERS</span>
+            </div>
+          </div>
+
+          <!-- Right: 3 Inquiry Cards & Actions -->
+          <div class="p-col-inquiry">
+            <div class="p-inquiry-header">
+              <span class="p-ih-label">CORE DIALECTICAL PILLARS</span>
+              <span class="p-ih-index">02 / 04</span>
+            </div>
+
+            <div class="p-inquiry-list">
+              <article class="p-inquiry-item" tabindex="0">
+                <span class="p-item-num">01</span>
+                <div class="p-item-body">
+                  <h3 class="p-item-title">The Hard Problem of Consciousness</h3>
+                  <p class="p-item-text">
+                    Even if neuroscience decodes every firing synapse, why should physical computation feel like anything at all? Subjective qualia remains the ghost in the machine.
+                  </p>
+                </div>
+              </article>
+
+              <article class="p-inquiry-item" tabindex="0">
+                <span class="p-item-num">02</span>
+                <div class="p-item-body">
+                  <h3 class="p-item-title">Causality, Free Will &amp; Determinism</h3>
+                  <p class="p-item-text">
+                    In a cosmos governed by prior physical states, is human agency a profound reality or a soothing evolutionary narrative constructed in hindsight?
+                  </p>
+                </div>
+              </article>
+
+              <article class="p-inquiry-item" tabindex="0">
+                <span class="p-item-num">03</span>
+                <div class="p-item-body">
+                  <h3 class="p-item-title">Digital Ontology &amp; Informational Realism</h3>
+                  <p class="p-item-text">
+                    Is the universe ultimately composed of concrete particles, or informational bits? Wheeler's "it from bit" asks whether computation is the bedrock of physics.
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <div class="p-actions-row">
+              <button type="button" class="p-btn-next" data-goto="3" aria-label="Proceed to Ethics">
+                <span>Next: Ethics</span>
+                <span>→</span>
+              </button>
+              <button type="button" class="p-btn-prev" data-goto="1" aria-label="Back to Epistemology">
+                <span>← Epistemology</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SCENE 3: ETHICS (EMERGES FROM TOP · BLACK BG)
+    ========================================================== -->
+    <section class="p-scene" id="scene-3-ethics" aria-label="Philosophy 03: Ethics">
+      <div class="p-gradient-bg-dark" aria-hidden="true"></div>
+      <div class="p-grain" aria-hidden="true"></div>
+
+      <div class="p-entry-badge">
+        <span>EMERGES FROM TOP</span>
+        <span>↑</span>
+      </div>
+
+      <div class="p-stage-wrap">
+        <div class="p-stage-grid">
+          
+          <!-- Left: Big Title & Question -->
+          <div class="p-col-title">
+            <div class="p-branch-badge">
+              <span class="p-branch-dot"></span>
+              <span>BRANCH 03 · MORAL AGENCY &amp; JUSTICE</span>
+            </div>
+
+            <h2 class="p-branch-title">ETHICS</h2>
+
+            <p class="p-branch-lead">
+              "How ought one to live, and where does moral duty reside when machines govern human fates?"
+            </p>
+
+            <div class="p-quote-box">
+              <p class="p-quote-text">
+                "Two things fill the mind with ever-increasing wonder: the starry heavens above me and the moral law within me."
+              </p>
+              <span class="p-quote-author">— Immanuel Kant · Critique of Practical Reason</span>
+            </div>
+
+            <div class="p-thinkers-row">
+              <span class="p-thinker-tag">SOCRATES</span>
+              <span class="p-thinker-tag">KANT</span>
+              <span class="p-thinker-tag">MILL</span>
+              <span class="p-thinker-tag">NIETZSCHE</span>
+              <span class="p-thinker-tag">ARENDT</span>
+            </div>
+          </div>
+
+          <!-- Right: 3 Inquiry Cards & Actions -->
+          <div class="p-col-inquiry">
+            <div class="p-inquiry-header">
+              <span class="p-ih-label">CORE DIALECTICAL PILLARS</span>
+              <span class="p-ih-index">03 / 04</span>
+            </div>
+
+            <div class="p-inquiry-list">
+              <article class="p-inquiry-item" tabindex="0">
+                <span class="p-item-num">01</span>
+                <div class="p-item-body">
+                  <h3 class="p-item-title">Deontology &amp; The Categorical Imperative</h3>
+                  <p class="p-item-text">
+                    Act only on maxims you could will as universal laws. Humans must be treated as ends in themselves, never merely as instruments of utility or efficiency.
+                  </p>
+                </div>
+              </article>
+
+              <article class="p-inquiry-item" tabindex="0">
+                <span class="p-item-num">02</span>
+                <div class="p-item-body">
+                  <h3 class="p-item-title">Consequentialism vs. Inalienable Rights</h3>
+                  <p class="p-item-text">
+                    Can the optimization of aggregate utility ever justify the quiet erasure of an individual's dignity? The tension between Bentham's calculus and moral sanctity.
+                  </p>
+                </div>
+              </article>
+
+              <article class="p-inquiry-item" tabindex="0">
+                <span class="p-item-num">03</span>
+                <div class="p-item-body">
+                  <h3 class="p-item-title">Algorithmic Agency &amp; The Diffusion of Blame</h3>
+                  <p class="p-item-text">
+                    When autonomous models distribute bail, triage healthcare, or direct autonomous force, where does moral accountability land when harm occurs?
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <div class="p-actions-row">
+              <button type="button" class="p-btn-next" data-goto="4" aria-label="Proceed to Logic & Dialectics">
+                <span>Next: Logic &amp; Dialectic</span>
+                <span>→</span>
+              </button>
+              <button type="button" class="p-btn-prev" data-goto="2" aria-label="Back to Metaphysics">
+                <span>↓ Metaphysics</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SCENE 4: LOGIC & DIALECTIC (EMERGES FROM LEFT · WHITE BG)
+    ========================================================== -->
+    <section class="p-scene" id="scene-4-logic" aria-label="Philosophy 04: Logic and Dialectics">
+      <div class="p-gradient-bg-light" aria-hidden="true"></div>
+      <div class="p-grain" aria-hidden="true"></div>
+
+      <div class="p-entry-badge">
+        <span>EMERGES FROM LEFT</span>
+        <span>←</span>
+      </div>
+
+      <div class="p-stage-wrap">
+        <div class="p-stage-grid">
+          
+          <!-- Left: Big Title & Question -->
+          <div class="p-col-title">
+            <div class="p-branch-badge">
+              <span class="p-branch-dot"></span>
+              <span>BRANCH 04 · FORMAL REASON &amp; TRANSCENDENCE</span>
+            </div>
+
+            <h2 class="p-branch-title">LOGIC &amp; DIALECTIC</h2>
+
+            <p class="p-branch-lead">
+              "Can formal reason exhaust the truth — or does reality require the dissolution of the observer?"
+            </p>
+
+            <div class="p-quote-box">
+              <p class="p-quote-text">
+                "Whereof one cannot speak, thereof one must be silent."
+              </p>
+              <span class="p-quote-author">— Ludwig Wittgenstein · Tractatus Logico-Philosophicus</span>
+            </div>
+
+            <div class="p-thinkers-row">
+              <span class="p-thinker-tag">WITTGENSTEIN</span>
+              <span class="p-thinker-tag">NAGARJUNA</span>
+              <span class="p-thinker-tag">SHANKARA</span>
+              <span class="p-thinker-tag">GÖDEL</span>
+              <span class="p-thinker-tag">CAMUS</span>
+            </div>
+          </div>
+
+          <!-- Right: 3 Inquiry Cards & Actions -->
+          <div class="p-col-inquiry">
+            <div class="p-inquiry-header">
+              <span class="p-ih-label">CORE DIALECTICAL PILLARS</span>
+              <span class="p-ih-index">04 / 04</span>
+            </div>
+
+            <div class="p-inquiry-list">
+              <article class="p-inquiry-item" tabindex="0">
+                <span class="p-item-num">01</span>
+                <div class="p-item-body">
+                  <h3 class="p-item-title">The Socratic Elenchus &amp; Paradox</h3>
+                  <p class="p-item-text">
+                    The practice of relentless cross-examination. By demonstrating that our cherished dogmas contain internal contradictions, wisdom begins where certainty dissolves.
+                  </p>
+                </div>
+              </article>
+
+              <article class="p-inquiry-item" tabindex="0">
+                <span class="p-item-num">02</span>
+                <div class="p-item-body">
+                  <h3 class="p-item-title">Gödelian Incompleteness &amp; The Edge of Code</h3>
+                  <p class="p-item-text">
+                    Kurt Gödel proved that in any sufficiently rich mathematical system, there exist true statements that can never be proven within the system itself. Truth transcends syntax.
+                  </p>
+                </div>
+              </article>
+
+              <article class="p-inquiry-item" tabindex="0">
+                <span class="p-item-num">03</span>
+                <div class="p-item-body">
+                  <h3 class="p-item-title">Eastern Non-Duality &amp; The Silent Witness</h3>
+                  <p class="p-item-text">
+                    From Advaita Vedanta (Neti Neti: "not this, not that") to Nagarjuna's Sunyata (Emptiness): transcending the dualism of subject and object to touch pure awareness.
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <div class="p-actions-row">
+              <a href="index.html" class="p-btn-next" aria-label="Return to PhiloSoc Home">
+                <span>Return to Home</span>
+                <span>↗</span>
+              </a>
+              <button type="button" class="p-btn-prev" data-goto="0" aria-label="Restart Taxonomy">
+                <span>Restart ↺</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Anime.js with CDN fallback -->
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+  <script>
+    if (typeof anime === 'undefined') {
+      document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"><\/script>');
+    }
+  </script>
+
+  <script src="scripts/philosophies.js"></script>
+</body>
+
+</html>
