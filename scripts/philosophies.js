@@ -77,11 +77,11 @@
       return;
     }
 
-    const leftElements = sceneEl.querySelectorAll('.p-col-left > *');
-    const centerArtwork = sceneEl.querySelector('.p-artwork-container');
-    const rightElements = sceneEl.querySelectorAll('.p-col-right > *');
+    const leftElements = sceneEl.querySelectorAll('.p-col-left > *, .p-col-exist-left > *, .p-absurd-hero-left > *');
+    const centerArtwork = sceneEl.querySelector('.p-artwork-container, .p-exist-figure-inner');
+    const rightElements = sceneEl.querySelectorAll('.p-col-right > *, .p-col-exist-right > *, .p-absurd-feature-wrap > *, .p-absurd-bottom-row > *');
 
-    // Left Column elements entrance
+    // Left Column entrance
     if (leftElements.length > 0) {
       anime({
         targets: leftElements,
@@ -93,27 +93,14 @@
       });
     }
 
-    // Center Artwork smooth scale & float in
+    // Center Artwork / Existentialism figure smooth entrance
     if (centerArtwork) {
       anime({
         targets: centerArtwork,
         opacity: [0, 1],
-        scale: [0.94, 1],
-        delay: 200,
-        duration: 700,
-        easing: 'cubicBezier(0.16, 1, 0.3, 1)'
-      });
-    }
-
-    // Existentialism Center Figure rising from bottom
-    const existFigure = sceneEl.querySelector('.p-exist-center-figure');
-    if (existFigure) {
-      anime({
-        targets: existFigure,
-        opacity: [0, 1],
-        translateY: [25, 0],
+        translateY: [20, 0],
         delay: 180,
-        duration: 750,
+        duration: 700,
         easing: 'cubicBezier(0.16, 1, 0.3, 1)'
       });
     }
@@ -124,21 +111,21 @@
       anime({
         targets: mountainWrap,
         opacity: [0, 1],
-        translateX: [30, 0],
-        translateY: [30, 0],
+        translateX: [25, 0],
+        translateY: [25, 0],
         delay: 160,
         duration: 750,
         easing: 'cubicBezier(0.16, 1, 0.3, 1)'
       });
     }
 
-    // Right Column elements entrance
+    // Right Column / Feature entrance
     if (rightElements.length > 0) {
       anime({
         targets: rightElements,
         opacity: [0, 1],
         translateY: [18, 0],
-        delay: anime.stagger(60, { start: 240 }),
+        delay: anime.stagger(55, { start: 220 }),
         duration: 620,
         easing: 'cubicBezier(0.16, 1, 0.3, 1)'
       });

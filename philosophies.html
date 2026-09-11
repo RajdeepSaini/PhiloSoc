@@ -229,7 +229,8 @@
 
     <!-- =========================================================
          SCENE 2: EXISTENTIALISM (EMERGES FROM RIGHT · WHITE BG)
-         Figure anchored at bottom of screen, rising heroically (matching sketch)
+         Heroic purple suit & bowler hat rising from floor with EXISTENTIALISM;
+         Surrounding elements framed on left and right with zero collisions.
     ========================================================== -->
     <section class="p-scene" id="scene-2-existentialism" aria-label="Philosophy 02: Existentialism">
       <div class="p-gradient-bg-light" aria-hidden="true"></div>
@@ -240,29 +241,31 @@
         <span>→</span>
       </div>
 
-      <!-- Central Hero Figure rising from bottom (matching user sketch) -->
-      <div class="p-exist-center-figure" aria-hidden="true">
-        <div class="p-exist-aura"></div>
-        <img
-          src="assets/images/exist.png"
-          alt="Existentialism"
-          class="p-exist-hero-img"
-          draggable="false"
-        />
+      <!-- Hero Figure anchored directly to the bottom of the scene (Matches sketch) -->
+      <div class="p-exist-figure-wrap" aria-hidden="true">
+        <div class="p-exist-figure-inner">
+          <div class="p-artwork-aura" aria-hidden="true"></div>
+          <img
+            src="assets/images/exist.png"
+            alt="Existentialism"
+            class="p-exist-hero-img"
+            draggable="false"
+          />
+        </div>
       </div>
 
-      <!-- Surrounding Stage Content: Left & Right Flanks -->
-      <div class="p-stage-wrap">
-        <div class="p-exist-grid">
+      <!-- Surrounding Editorial Content -->
+      <div class="p-stage-wrap p-stage-exist">
+        <div class="p-exist-layout">
           
-          <!-- Left: Narrative, Lead Thesis & Quotes (No duplicate title) -->
-          <div class="p-col-left p-col-exist-left">
+          <!-- Left Column: Manifesto & Thinkers -->
+          <div class="p-col-exist-left">
             <div class="p-branch-badge">
               <span class="p-branch-dot"></span>
               <span>BRANCH 02 · RADICAL FREEDOM</span>
             </div>
 
-            <p class="p-branch-lead" style="font-size: 1.28rem;">
+            <p class="p-branch-lead" style="font-size: 1.18rem;">
               "Existence precedes essence — man first exists, encounters himself, surges up into the world, and defines himself afterwards."
             </p>
 
@@ -281,11 +284,8 @@
             </div>
           </div>
 
-          <!-- Center Spacer for the large figure -->
-          <div class="p-col-exist-spacer" aria-hidden="true"></div>
-
-          <!-- Right: 3 Core Pillars & Navigation -->
-          <div class="p-col-right p-col-exist-right">
+          <!-- Right Column: Core Concept Cards & Navigation -->
+          <div class="p-col-exist-right">
             <div class="p-inquiry-header">
               <span class="p-ih-label">CORE CONCEPTS</span>
               <span class="p-ih-index">02 / 04</span>
@@ -340,8 +340,8 @@
 
     <!-- =========================================================
          SCENE 3: ABSURDISM (EMERGES FROM TOP · BLACK BG)
-         Sisyphus mountain anchored at bottom-right (matching user sketch);
-         Details & "One must imagine Sisyphus happy" above on left/center
+         Sisyphus mountain big on bottom-right;
+         Details & "One must imagine Sisyphus happy" placed above!
     ========================================================== -->
     <section class="p-scene" id="scene-3-absurdism" aria-label="Philosophy 03: Absurdism">
       <div class="p-gradient-bg-dark" aria-hidden="true"></div>
@@ -352,7 +352,7 @@
         <span>↑</span>
       </div>
 
-      <!-- Sisyphus Climbing the Mountain (Anchored at Bottom-Right, as in user sketch) -->
+      <!-- Sisyphus Climbing the Mountain (Large scale, anchored at Bottom-Right) -->
       <div class="p-absurd-mountain-wrap" aria-hidden="true">
         <img
           src="assets/images/absurd.png"
@@ -362,12 +362,14 @@
         />
       </div>
 
-      <!-- Editorial Content (Arranged on the left and above the mountain) -->
+      <!-- Content Placed Above the Mountain -->
       <div class="p-stage-absurd">
-        <div class="p-absurd-grid">
+        
+        <!-- Top Editorial Row: Identity & Quotes on Left, Sisyphus Feature on Right -->
+        <div class="p-absurd-top-row">
           
-          <!-- Left: Identity, Question & Thinkers -->
-          <div class="p-col-left p-col-absurd-left">
+          <!-- Left: Identity, Question & Axiom -->
+          <div class="p-absurd-hero-left">
             <div class="p-branch-badge">
               <span class="p-branch-dot"></span>
               <span>BRANCH 03 · THE REBEL'S LAUGHTER</span>
@@ -385,22 +387,15 @@
               </p>
               <span class="p-quote-author">— Albert Camus · The Myth of Sisyphus (1942)</span>
             </div>
-
-            <div class="p-thinkers-row">
-              <span class="p-thinker-tag">ALBERT CAMUS</span>
-              <span class="p-thinker-tag">THOMAS NAGEL</span>
-              <span class="p-thinker-tag">FRANZ KAFKA</span>
-            </div>
           </div>
 
-          <!-- Right: Famous Quote & Detailed "WHY?" Explanation -->
-          <div class="p-col-right p-col-absurd-right">
+          <!-- Right / Center: Feature Box Above the Mountain Slope -->
+          <div class="p-absurd-feature-wrap">
             <div class="p-inquiry-header">
               <span class="p-ih-label">THE SISYPHEAN TRIUMPH</span>
               <span class="p-ih-index">03 / 04</span>
             </div>
 
-            <!-- Prominent Feature: "One must imagine Sisyphus happy" and WHY -->
             <div class="p-absurd-feature">
               <blockquote class="p-absurd-quote-banner">
                 "One must imagine Sisyphus happy."
@@ -415,6 +410,18 @@
                 <strong>Why happy?</strong> In the precise pause when Sisyphus descends back down the mountain to retrieve the stone, he is completely <em>conscious</em> of his fate. He harbors no delusions of divine rescue and no cowardly hope for a heavenly reward. By consciously embracing his futile struggle with defiance and joy, he renders the gods completely powerless. His fate belongs to him; his rock is his thing. The struggle itself toward the heights is enough to fill a human heart.
               </p>
             </div>
+          </div>
+
+        </div>
+
+        <!-- Bottom Row: Thinkers & Navigation Buttons (safely on the left) -->
+        <div class="p-absurd-bottom-row">
+          <div class="p-absurd-controls">
+            <div class="p-thinkers-row">
+              <span class="p-thinker-tag">ALBERT CAMUS</span>
+              <span class="p-thinker-tag">THOMAS NAGEL</span>
+              <span class="p-thinker-tag">FRANZ KAFKA</span>
+            </div>
 
             <div class="p-actions-row">
               <button type="button" class="p-btn-next" data-goto="4" aria-label="Proceed to Skepticism">
@@ -426,8 +433,8 @@
               </button>
             </div>
           </div>
-
         </div>
+
       </div>
     </section>
 
