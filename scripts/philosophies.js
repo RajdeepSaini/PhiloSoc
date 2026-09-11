@@ -77,30 +77,17 @@
       return;
     }
 
-    const headerElements = sceneEl.querySelectorAll('.p-exist-header > *, .p-exist-shelf-card');
-    const leftElements = sceneEl.querySelectorAll('.p-col-left > *, .p-exist-flank-left > *, .p-absurd-hero-left > *');
-    const centerArtwork = sceneEl.querySelector('.p-artwork-container, .p-exist-figure-inner');
-    const rightElements = sceneEl.querySelectorAll('.p-col-right > *, .p-exist-flank-right > *, .p-absurd-feature-wrap > *, .p-absurd-bottom-row > *');
+    const leftElements = sceneEl.querySelectorAll('.p-col-left > *, .p-absurd-hero-left > *');
+    const centerArtwork = sceneEl.querySelector('.p-artwork-container');
+    const rightElements = sceneEl.querySelectorAll('.p-col-right > *, .p-absurd-feature-wrap > *, .p-absurd-bottom-row > *');
 
-    // Header elements entrance (Existentialism canopy)
-    if (headerElements.length > 0) {
-      anime({
-        targets: headerElements,
-        opacity: [0, 1],
-        translateY: [14, 0],
-        delay: anime.stagger(50, { start: 100 }),
-        duration: 560,
-        easing: 'cubicBezier(0.16, 1, 0.3, 1)'
-      });
-    }
-
-    // Left Column / Flank entrance
+    // Left Column entrance
     if (leftElements.length > 0) {
       anime({
         targets: leftElements,
         opacity: [0, 1],
         translateY: [16, 0],
-        delay: anime.stagger(45, { start: 180 }),
+        delay: anime.stagger(45, { start: 140 }),
         duration: 580,
         easing: 'cubicBezier(0.16, 1, 0.3, 1)'
       });
