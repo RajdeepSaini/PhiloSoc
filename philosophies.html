@@ -27,7 +27,6 @@
     <header class="p-nav tone-light" id="p-nav" aria-label="Main navigation">
       <a href="index.html" class="p-nav-brand" aria-label="PhiloSoc Home">
         <span class="p-brand-text">PHILOSOC</span>
-        <span class="p-brand-badge">BRANCHES</span>
       </a>
 
       <ul class="p-nav-links" role="list">
@@ -45,11 +44,44 @@
     ========================================================== -->
     <nav class="p-progress tone-light" id="p-progress" aria-label="Taxonomy progress">
       <button type="button" class="p-pdot active" data-scene="0" data-label="00 · HERO" aria-label="Hero"></button>
-      <button type="button" class="p-pdot" data-scene="1" data-label="01 · STOICISM" aria-label="Stoicism (from bottom)"></button>
-      <button type="button" class="p-pdot" data-scene="2" data-label="02 · EXISTENTIALISM" aria-label="Existentialism (from right)"></button>
-      <button type="button" class="p-pdot" data-scene="3" data-label="03 · ABSURDISM" aria-label="Absurdism (from top)"></button>
-      <button type="button" class="p-pdot" data-scene="4" data-label="04 · SKEPTICISM" aria-label="Skepticism (from left)"></button>
+      <button type="button" class="p-pdot" data-scene="1" data-label="01 · STOICISM" aria-label="Stoicism"></button>
+      <button type="button" class="p-pdot" data-scene="2" data-label="02 · EXISTENTIALISM" aria-label="Existentialism"></button>
+      <button type="button" class="p-pdot" data-scene="3" data-label="03 · ABSURDISM" aria-label="Absurdism"></button>
+      <button type="button" class="p-pdot" data-scene="4" data-label="04 · SKEPTICISM" aria-label="Skepticism"></button>
+      <button type="button" class="p-pdot" data-scene="5" data-label="05 · NIHILISM" aria-label="Nihilism"></button>
+      <button type="button" class="p-pdot" data-scene="6" data-label="06 · OPTIMISM" aria-label="Optimism"></button>
+      <button type="button" class="p-pdot" data-scene="7" data-label="07 · THE DUALITY" aria-label="The Duality"></button>
     </nav>
+
+    <!-- =========================================================
+         CINEMATIC COIN ACTORS & TRANSITION STAGE
+    ========================================================== -->
+    <div id="p-cinematic-stage" aria-hidden="true">
+      <!-- Screen Transition Curtain -->
+      <div id="p-transition-curtain"></div>
+
+      <!-- Black Coin Actor -->
+      <div id="p-actor-dark-coin" class="p-coin-actor">
+        <div class="p-coin-disc">
+          <img src="assets/coin_dark.png" alt="Black Void Coin" draggable="false">
+        </div>
+      </div>
+
+      <!-- White Coin Actor -->
+      <div id="p-actor-white-coin" class="p-coin-actor">
+        <div class="p-coin-disc">
+          <img src="assets/coin_white.png" alt="White Radiant Coin" draggable="false">
+        </div>
+      </div>
+
+      <!-- Merged PhiloSoc Yin-Yang Logo Actor -->
+      <div id="p-actor-merged-logo" class="p-logo-actor">
+        <div class="p-shockwave-ring"></div>
+        <div class="p-merged-disc" tabindex="0" role="button" aria-label="PhiloSoc Duality Emblem">
+          <img src="assets/coin_yinyang.png" alt="PhiloSoc Duality Coin" class="p-merged-coin-img" draggable="false">
+        </div>
+      </div>
+    </div>
 
     <!-- =========================================================
          SCENE 0: HERO (BASE LAYER · PAPER WHITE)
@@ -70,12 +102,6 @@
 
       <!-- Hero Centerpiece -->
       <div class="p-hero-inner">
-        <div class="p-hero-eyebrow">
-          <span class="p-hero-dot"></span>
-          <span>ARCHIVAL CLASSIFICATION · VOL. I</span>
-          <span class="p-hero-dot"></span>
-        </div>
-
         <h1 class="p-hero-title">
           WHAT ARE THE <span class="p-hero-title-accent">different</span> TYPES OF PHILOSOPHIES?
         </h1>
@@ -89,21 +115,6 @@
         <p class="p-hero-subtitle">
           A dialectic cartography — four distinct ways the human mind confronts fate, freedom, absurdity, and certainty.
         </p>
-
-        <div class="p-hero-directions-grid">
-          <span class="p-hero-dir-pill">
-            <span class="p-hero-dir-arrow">↓</span> BOTTOM · 01 STOICISM
-          </span>
-          <span class="p-hero-dir-pill">
-            <span class="p-hero-dir-arrow">→</span> RIGHT · 02 EXISTENTIALISM
-          </span>
-          <span class="p-hero-dir-pill">
-            <span class="p-hero-dir-arrow">↑</span> TOP · 03 ABSURDISM
-          </span>
-          <span class="p-hero-dir-pill">
-            <span class="p-hero-dir-arrow">←</span> LEFT · 04 SKEPTICISM
-          </span>
-        </div>
       </div>
 
       <!-- Scroll cue -->
@@ -122,11 +133,6 @@
     <section class="p-scene" id="scene-1-stoicism" aria-label="Philosophy 01: Stoicism">
       <div class="p-gradient-bg-dark" aria-hidden="true"></div>
       <div class="p-grain" aria-hidden="true"></div>
-
-      <div class="p-entry-badge">
-        <span>EMERGES FROM BOTTOM</span>
-        <span>↓</span>
-      </div>
 
       <div class="p-stage-wrap">
         <div class="p-tripartite-grid">
@@ -236,11 +242,6 @@
       <div class="p-gradient-bg-light" aria-hidden="true"></div>
       <div class="p-grain" aria-hidden="true"></div>
 
-      <div class="p-entry-badge">
-        <span>EMERGES FROM RIGHT</span>
-        <span>→</span>
-      </div>
-
       <div class="p-stage-wrap">
         <div class="p-tripartite-grid p-exist-tripartite-grid">
           
@@ -301,36 +302,9 @@
           <!-- Right Column: Visual Diagram & Deep Core Pillars -->
           <div class="p-col-right p-exist-col-right">
             
-            <!-- Bespoke Visual Concept Diagram: The Great Inversion -->
-            <div class="p-exist-diagram" aria-label="Essentialism versus Existentialism Model">
-              <div class="p-diagram-header">
-                <span class="p-diagram-badge">CONCEPTUAL INVERSION</span>
-                <span class="p-diagram-title">How Existentialism Flips Philosophy</span>
-              </div>
-
-              <!-- Track 1: Classical Essentialism -->
-              <div class="p-diagram-flow p-flow-classical">
-                <span class="p-flow-label">CLASSICAL ESSENTIALISM:</span>
-                <div class="p-flow-track">
-                  <span class="p-flow-node">Divine Blueprint</span>
-                  <span class="p-flow-sep">→</span>
-                  <span class="p-flow-node">Fixed Essence</span>
-                  <span class="p-flow-sep">→</span>
-                  <span class="p-flow-node">Human Action</span>
-                </div>
-              </div>
-
-              <!-- Track 2: Sartrean Existentialism -->
-              <div class="p-diagram-flow p-flow-sartrean">
-                <span class="p-flow-label">EXISTENTIALIST INVERSION:</span>
-                <div class="p-flow-track">
-                  <span class="p-flow-node p-node-active">Raw Existence</span>
-                  <span class="p-flow-sep">→</span>
-                  <span class="p-flow-node p-node-active">Radical Choice</span>
-                  <span class="p-flow-sep">→</span>
-                  <span class="p-flow-node p-node-active">Authored Essence</span>
-                </div>
-              </div>
+            <div class="p-inquiry-header">
+              <span class="p-ih-label">CORE CONCEPTS</span>
+              <span class="p-ih-index">02 / 04</span>
             </div>
 
             <!-- Deep Core Inquiries -->
@@ -393,12 +367,7 @@
       <div class="p-gradient-bg-dark" aria-hidden="true"></div>
       <div class="p-grain" aria-hidden="true"></div>
 
-      <div class="p-entry-badge">
-        <span>EMERGES FROM TOP</span>
-        <span>↑</span>
-      </div>
-
-      <!-- Sisyphus Climbing the Mountain (Large scale, anchored at Bottom-Right) -->
+      <!-- Sisyphus Climbing the Mountain (Anchored at Bottom-Right, completely unobstructed) -->
       <div class="p-absurd-mountain-wrap" aria-hidden="true">
         <img
           src="assets/images/absurd.png"
@@ -408,61 +377,39 @@
         />
       </div>
 
-      <!-- Content Placed Above the Mountain -->
-      <div class="p-stage-absurd">
-        
-        <!-- Top Editorial Row: Identity & Quotes on Left, Sisyphus Feature on Right -->
-        <div class="p-absurd-top-row">
+      <!-- Content Placed on Left (Zero Overlap with Sisyphus or Boulder) -->
+      <div class="p-stage-wrap p-stage-absurd">
+        <div class="p-absurd-content">
           
-          <!-- Left: Identity, Question & Axiom -->
-          <div class="p-absurd-hero-left">
-            <div class="p-branch-badge">
-              <span class="p-branch-dot"></span>
-              <span>BRANCH 03 · THE REBEL'S LAUGHTER</span>
-            </div>
+          <div class="p-branch-badge">
+            <span class="p-branch-dot"></span>
+            <span>BRANCH 03 · THE REBEL'S LAUGHTER</span>
+          </div>
 
-            <h2 class="p-branch-title">ABSURDISM</h2>
+          <h2 class="p-branch-title">ABSURDISM</h2>
 
-            <p class="p-branch-lead">
-              "The absurd is born of this confrontation between the human call and the unreasonable silence of the world."
+          <p class="p-branch-lead">
+            "The absurd is born of this confrontation between the human call and the unreasonable silence of the world."
+          </p>
+
+          <!-- Sisyphus Feature Box: One must imagine Sisyphus happy -->
+          <div class="p-absurd-feature">
+            <blockquote class="p-absurd-quote-banner">
+              "One must imagine Sisyphus happy."
+            </blockquote>
+
+            <span class="p-absurd-why-label">WHY MUST SISYPHUS BE HAPPY?</span>
+
+            <p class="p-absurd-why-text">
+              Condemned by the gods to roll an immense stone up a mountain for eternity, only to watch it roll back down every single time. His punishment is the ultimate metaphor for human existence: repetitive, exhausting, and completely devoid of objective purpose.
             </p>
-
-            <div class="p-quote-box">
-              <p class="p-quote-text">
-                "There is only one really serious philosophical problem, and that is suicide. Deciding whether or not life is worth living."
-              </p>
-              <span class="p-quote-author">— Albert Camus · The Myth of Sisyphus (1942)</span>
-            </div>
+            <p class="p-absurd-why-text">
+              <strong>Why happy?</strong> In the precise pause when Sisyphus descends back down the mountain to retrieve the stone, he is completely <em>conscious</em> of his fate. Embracing his futile struggle with defiance and joy, he renders the gods powerless. His fate belongs to him; his rock is his thing. The struggle itself toward the heights is enough to fill a human heart.
+            </p>
           </div>
 
-          <!-- Right / Center: Feature Box Above the Mountain Slope -->
-          <div class="p-absurd-feature-wrap">
-            <div class="p-inquiry-header">
-              <span class="p-ih-label">THE SISYPHEAN TRIUMPH</span>
-              <span class="p-ih-index">03 / 04</span>
-            </div>
-
-            <div class="p-absurd-feature">
-              <blockquote class="p-absurd-quote-banner">
-                "One must imagine Sisyphus happy."
-              </blockquote>
-
-              <span class="p-absurd-why-label">WHY MUST SISYPHUS BE HAPPY?</span>
-
-              <p class="p-absurd-why-text">
-                Condemned by the gods to roll an immense boulder up a mountain for eternity, only to watch it roll back down every single time. His punishment is the ultimate metaphor for human existence: repetitive, exhausting, and completely devoid of objective purpose.
-              </p>
-              <p class="p-absurd-why-text">
-                <strong>Why happy?</strong> In the precise pause when Sisyphus descends back down the mountain to retrieve the stone, he is completely <em>conscious</em> of his fate. He harbors no delusions of divine rescue and no cowardly hope for a heavenly reward. By consciously embracing his futile struggle with defiance and joy, he renders the gods completely powerless. His fate belongs to him; his rock is his thing. The struggle itself toward the heights is enough to fill a human heart.
-              </p>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Bottom Row: Thinkers & Navigation Buttons (safely on the left) -->
-        <div class="p-absurd-bottom-row">
-          <div class="p-absurd-controls">
+          <!-- Bottom: Thinkers & Navigation Buttons -->
+          <div class="p-absurd-footer">
             <div class="p-thinkers-row">
               <span class="p-thinker-tag">ALBERT CAMUS</span>
               <span class="p-thinker-tag">THOMAS NAGEL</span>
@@ -475,12 +422,12 @@
                 <span>→</span>
               </button>
               <button type="button" class="p-btn-prev" data-goto="2" aria-label="Back to Existentialism">
-                <span>↓ Existentialism</span>
+                <span>← Existentialism</span>
               </button>
             </div>
           </div>
-        </div>
 
+        </div>
       </div>
     </section>
 
@@ -491,11 +438,6 @@
     <section class="p-scene" id="scene-4-skepticism" aria-label="Philosophy 04: Skepticism">
       <div class="p-gradient-bg-light" aria-hidden="true"></div>
       <div class="p-grain" aria-hidden="true"></div>
-
-      <div class="p-entry-badge">
-        <span>EMERGES FROM LEFT</span>
-        <span>←</span>
-      </div>
 
       <div class="p-stage-wrap">
         <div class="p-tripartite-grid">
@@ -582,16 +524,301 @@
             </div>
 
             <div class="p-actions-row">
-              <a href="index.html" class="p-btn-next" aria-label="Return to PhiloSoc Home">
-                <span>Return to Home</span>
-                <span>↗</span>
-              </a>
-              <button type="button" class="p-btn-prev" data-goto="0" aria-label="Restart Taxonomy">
-                <span>Restart ↺</span>
+              <button type="button" class="p-btn-next" data-goto="5" aria-label="Flip the Coin to Nihilism">
+                <span>Flip the Coin · Nihilism</span>
+                <span>🪙</span>
+              </button>
+              <button type="button" class="p-btn-prev" data-goto="3" aria-label="Previous Philosophy">
+                <span>← Absurdism</span>
               </button>
             </div>
           </div>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SCENE 5: NIHILISM (EMERGES FROM COIN FLIP BLACKOUT)
+    ========================================================== -->
+    <section class="p-scene" id="scene-5-nihilism" aria-label="Nihilism Section">
+      <div class="p-gradient-bg-dark" aria-hidden="true"></div>
+      <div class="p-grain" aria-hidden="true"></div>
+
+      <div class="p-stage-wrap">
+        <div class="p-tripartite-grid p-nihil-tripartite-grid">
+
+          <!-- Left: Ontological Axiom & Thought Experiment -->
+          <div class="p-col-left p-nihil-col-left">
+            <div class="p-branch-badge">
+              <span class="p-branch-dot"></span>
+              <span>BRANCH 05 · THE COSMIC VOID</span>
+            </div>
+
+            <h2 class="p-branch-title">NIHILISM</h2>
+
+            <p class="p-branch-lead">
+              "The universe was not created for us; it does not care about our survival, our morals, or our destinies."
+            </p>
+
+            <div class="p-analogy-box p-nihil-analogy-box">
+              <div class="p-analogy-header">
+                <span class="p-analogy-tag">THOUGHT EXPERIMENT</span>
+                <span class="p-analogy-title">The Cosmic Abyss &amp; The Madman's Lantern</span>
+              </div>
+              <p class="p-analogy-text">
+                Nietzsche's madman lit a lantern in bright morning hours, crying: <em>"Whither is God moving? Are we not plunging continually? Backward, sideward, forward, in all directions? Is there still any up or down?"</em> Nihilism is the vertigo of waking up to realize the cosmic safety net was never there.
+              </p>
+            </div>
+
+            <div class="p-quote-box">
+              <p class="p-quote-text">
+                "The universe seems neither benign nor hostile, merely indifferent to the concerns of such puny creatures as we."
+              </p>
+              <span class="p-quote-author">— Carl Sagan · Cosmos (1980)</span>
+            </div>
+
+            <div class="p-thinkers-row">
+              <span class="p-thinker-tag">FRIEDRICH NIETZSCHE</span>
+              <span class="p-thinker-tag">ARTHUR SCHOPENHAUER</span>
+              <span class="p-thinker-tag">EMIL CIORAN</span>
+              <span class="p-thinker-tag">RAY BRASSIER</span>
+              <span class="p-thinker-tag">GORGIAS</span>
+            </div>
+          </div>
+
+          <!-- Center: Dark Statue Gazing into Cosmic Vortex -->
+          <div class="p-col-center p-nihil-col-center">
+            <div class="p-artwork-container p-nihil-vitrine">
+              <div class="p-artwork-aura p-nihil-aura" aria-hidden="true"></div>
+              <img
+                src="assets/images/nihil.png"
+                alt="Nihilism - Classical marble sculpture gazing into a cosmic vortex abyss"
+                class="p-center-img p-nihil-hero-art"
+                draggable="false"
+              />
+              <span class="p-artwork-caption">THE COSMIC HORIZON · THE UNWRITTEN ABYSS</span>
+            </div>
+          </div>
+
+          <!-- Right: Core Principles & Navigation -->
+          <div class="p-col-right p-nihil-col-right">
+            <div class="p-inquiry-header">
+              <span class="p-ih-label">CORE PRINCIPLES</span>
+              <span class="p-ih-index">05 / 06</span>
+            </div>
+
+            <div class="p-inquiry-list">
+              <article class="p-inquiry-item" tabindex="0">
+                <span class="p-item-num">01</span>
+                <div class="p-item-body">
+                  <h3 class="p-item-title">Cosmic Indifference</h3>
+                  <p class="p-item-text">
+                    Reality has no built-in teleology. Neither tragedy nor triumph has divine oversight; the stars burn with absolute neutrality towards human significance.
+                  </p>
+                </div>
+              </article>
+
+              <article class="p-inquiry-item" tabindex="0">
+                <span class="p-item-num">02</span>
+                <div class="p-item-body">
+                  <h3 class="p-item-title">Active vs. Passive Nihilism</h3>
+                  <p class="p-item-text">
+                    Passive nihilism collapses into paralysis and despair. Active nihilism weaponizes the void: dismantling dogmas and destroying superstition to liberate human vitality.
+                  </p>
+                </div>
+              </article>
+
+              <article class="p-inquiry-item" tabindex="0">
+                <span class="p-item-num">03</span>
+                <div class="p-item-body">
+                  <h3 class="p-item-title">The Clean Slate of Existence</h3>
+                  <p class="p-item-text">
+                    When nothing is cosmically forbidden, commanded, or pre-scripted, the ground is completely cleared. The collapse of false meaning becomes the womb of authentic creation.
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <div class="p-actions-row">
+              <button type="button" class="p-btn-next" data-goto="6" aria-label="Ascend to Optimism">
+                <span>Ascend to Optimism</span>
+                <span>↑</span>
+              </button>
+              <button type="button" class="p-btn-prev" data-goto="4" aria-label="Previous Philosophy">
+                <span>← Skepticism</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SCENE 6: OPTIMISM (REVEALED AS COIN EXITS TOP · WHITE BG)
+    ========================================================== -->
+    <section class="p-scene" id="scene-6-optimism" aria-label="Optimism Section">
+      <div class="p-gradient-bg-light" aria-hidden="true"></div>
+      <div class="p-grain" aria-hidden="true"></div>
+
+      <div class="p-stage-wrap">
+        <div class="p-tripartite-grid p-optim-tripartite-grid">
+
+          <!-- Left: Ontological Axiom & Thought Experiment -->
+          <div class="p-col-left p-optim-col-left">
+            <div class="p-branch-badge">
+              <span class="p-branch-dot"></span>
+              <span>BRANCH 06 · THE RADIANT AFFIRMATION</span>
+            </div>
+
+            <h2 class="p-branch-title">OPTIMISM</h2>
+
+            <p class="p-branch-lead">
+              "If the universe has no inherent purpose, then the meaning of life is ours to invent, celebrate, and gift to one another."
+            </p>
+
+            <div class="p-analogy-box p-optim-analogy-box">
+              <div class="p-analogy-header">
+                <span class="p-analogy-tag">THOUGHT EXPERIMENT</span>
+                <span class="p-analogy-title">The Sandbox of Consciousness</span>
+              </div>
+              <p class="p-analogy-text">
+                If reality were an authoritarian exam with pre-written scoring criteria, your life would be a performance under coercion. Because there is no exam and no judge, reality is a boundless sandbox. You are the universe waking up to experience art, compassion, and discovery.
+              </p>
+            </div>
+
+            <div class="p-quote-box">
+              <p class="p-quote-text">
+                "In the depth of winter, I finally learned that within me there lay an invincible summer."
+              </p>
+              <span class="p-quote-author">— Albert Camus · Return to Tipasa (1952)</span>
+            </div>
+
+            <div class="p-thinkers-row">
+              <span class="p-thinker-tag">ALBERT CAMUS</span>
+              <span class="p-thinker-tag">RALPH WALDO EMERSON</span>
+              <span class="p-thinker-tag">CARL SAGAN</span>
+              <span class="p-thinker-tag">BARUCH SPINOZA</span>
+              <span class="p-thinker-tag">GOTTFRIED LEIBNIZ</span>
+            </div>
+          </div>
+
+          <!-- Center: Neoclassical Statue of Optimism & Golden Arch -->
+          <div class="p-col-center p-optim-col-center">
+            <div class="p-artwork-container p-optim-vitrine">
+              <div class="p-artwork-aura p-optim-aura" aria-hidden="true"></div>
+              <img
+                src="assets/images/optim.png"
+                alt="Optimism - Neoclassical marble sculpture reaching toward a radiant sunburst arch"
+                class="p-center-img p-optim-hero-art"
+                draggable="false"
+              />
+              <span class="p-artwork-caption">THE DAWN OF AFFIRMATION · FLOURISHING</span>
+            </div>
+          </div>
+
+          <!-- Right: Core Principles & Navigation -->
+          <div class="p-col-right p-optim-col-right">
+            <div class="p-inquiry-header">
+              <span class="p-ih-label">CORE PRINCIPLES</span>
+              <span class="p-ih-index">06 / 06</span>
+            </div>
+
+            <div class="p-inquiry-list">
+              <article class="p-inquiry-item" tabindex="0">
+                <span class="p-item-num">01</span>
+                <div class="p-item-body">
+                  <h3 class="p-item-title">Epistemological Wonder</h3>
+                  <p class="p-item-text">
+                    Out of 13.8 billion years of matter, stardust arranged itself into eyes that can behold galaxies, and minds that can write poetry. Wonder is our baseline duty.
+                  </p>
+                </div>
+              </article>
+
+              <article class="p-inquiry-item" tabindex="0">
+                <span class="p-item-num">02</span>
+                <div class="p-item-body">
+                  <h3 class="p-item-title">Self-Authored Significance</h3>
+                  <p class="p-item-text">
+                    The absence of cosmic debt means every act of kindness, every song created, and every conversation shared is an unforced miracle. You are the author of your worth.
+                  </p>
+                </div>
+              </article>
+
+              <article class="p-inquiry-item" tabindex="0">
+                <span class="p-item-num">03</span>
+                <div class="p-item-body">
+                  <h3 class="p-item-title">Radical Hope &amp; Flourishing</h3>
+                  <p class="p-item-text">
+                    Optimism is not naive complacency; it is the ferocious courage to look into the void and build warmth, connection, and wisdom in spite of entropy.
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <div class="p-actions-row">
+              <button type="button" class="p-btn-next" data-goto="7" aria-label="Drop the Coin to the Duality">
+                <span>The Duality · Yin Yang</span>
+                <span>☯</span>
+              </button>
+              <button type="button" class="p-btn-prev" data-goto="5" aria-label="Previous Philosophy">
+                <span>← Nihilism</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SCENE 7: THE GRAND CLIMAX — THE DUALITY (YIN YANG COIN)
+    ========================================================== -->
+    <section class="p-scene" id="scene-7-duality" aria-label="The Duality Section">
+      <div class="p-duality-split-bg" aria-hidden="true">
+        <div class="p-split-half p-split-dark"></div>
+        <div class="p-split-half p-split-light"></div>
+      </div>
+      <div class="p-grain" aria-hidden="true"></div>
+
+      <div class="p-duality-stage">
+        <div class="p-duality-header">
+          <div class="p-duality-title-wrap">
+            <h2 class="p-duality-title p-title-left">TWO SIDES OF THE SAME COIN</h2>
+            <h2 class="p-duality-title p-title-right" aria-hidden="true">TWO SIDES OF THE SAME COIN</h2>
+          </div>
+        </div>
+
+        <!-- Central Landing Anchor for the Coin -->
+        <div class="p-duality-coin-anchor" id="p-duality-coin-anchor"></div>
+
+        <div class="p-duality-cards-grid">
+          <div class="p-duality-card p-card-nihil">
+            <div class="p-card-side-tag">THE REVERSE · NIHILISM</div>
+            <h3 class="p-card-side-title">The Cosmic Void</h3>
+            <p class="p-card-side-text">
+              Accepting that reality owes us no intrinsic destiny cleanses us of superstition, false entitlement, and dogmatic terror. It gives us an unshakeable foundation: the courage of truth.
+            </p>
+          </div>
+
+          <div class="p-duality-card p-card-optim">
+            <div class="p-card-side-tag">THE OBVERSE · OPTIMISM</div>
+            <h3 class="p-card-side-title">The Radiant Flame</h3>
+            <p class="p-card-side-text">
+              Knowing we are temporary custodians of consciousness fills each fleeting second with profound sacredness. Love, beauty, and justice matter because we choose to make them matter.
+            </p>
+          </div>
+        </div>
+
+        <div class="p-duality-footer-actions">
+          <button type="button" class="p-btn-duality-restart" data-goto="0">
+            <span>Restart Odyssey ↺</span>
+          </button>
+          <a href="index.html#scene-why-join" class="p-btn-duality-cta">
+            <span>Join PhiloSoc Community</span>
+            <span>↗</span>
+          </a>
         </div>
       </div>
     </section>
